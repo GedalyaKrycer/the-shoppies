@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+$headline: green;
+
+h1 {
+  font-size: 100px;
+  color: $headline;
+}
