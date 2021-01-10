@@ -1,3 +1,5 @@
+@import '../sassStyles/colors';
+
 body {
   margin: 0;
   padding: 0;
@@ -7,4 +9,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background-color: $secondaryLight1Color;
+
 }
