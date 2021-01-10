@@ -1,0 +1,11 @@
+@import '../../../sassStyles/mixins';
+
+header {
+    margin-top: 20px;
+
+    @include smMinBreakPoint {
+        margin-top: 40px;
+    }
+
+   
+}

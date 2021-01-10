@@ -1,9 +1,15 @@
+@import './mixins';
+
 h1 {
     font-style: normal;
     font-weight: bold;
-    font-size: 48px;
-    line-height: 57px;
-    margin-bottom: 0;
+    font-size: 34px;
+    line-height: 1.2em;
+    margin: 0;
+
+    @include smMinBreakPoint {
+        font-size: 48px;
+    }
 }
 
 h2 {
@@ -37,10 +43,14 @@ p {
 .typography__subhead {
     font-style: normal;
     font-weight: normal;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 125%;
     letter-spacing: 0.03em;
     margin-top: 14px;
+
+    @include smMinBreakPoint {
+        font-size: 26px;
+    }
 }
 
 .typography__nomination-number {
