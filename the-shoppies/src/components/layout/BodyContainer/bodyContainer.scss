@@ -2,8 +2,12 @@
 
 .bodyContainer {
     max-width: 1264px;
-    margin: 0 auto;
+    margin: 64px auto 0;
     padding: 0 20px;
+    
+    @include mdMinBreakPoint {
+        margin: 96px auto 0;
+    }
 
     @include xxlMinBreakPoint {
         padding: 0;

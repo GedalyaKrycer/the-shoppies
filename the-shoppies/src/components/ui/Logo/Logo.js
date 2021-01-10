@@ -3,7 +3,6 @@ import './logo.scss';
 
 const Logo = () => {
     return <svg
-        className="logo"
         width="175"
         height="34"
         viewBox="0 0 175 34"

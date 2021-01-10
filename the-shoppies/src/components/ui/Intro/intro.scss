@@ -1,0 +1,9 @@
+@import '../../../sassStyles/variables';
+
+.intro__title {
+    color: $secondaryColor;
+    span {
+        color: $primaryDarkColor;
+        display: block;
+    }
+}

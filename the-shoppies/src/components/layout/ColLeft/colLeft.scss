@@ -1,3 +1,11 @@
+@import '../../../sassStyles/mixins';
+
 .colLeft {
-    max-width: 408px;
+    max-width: 330px;
+
+    @include mdMinBreakPoint {
+        max-width: 410px;
+    }
+
+
 }

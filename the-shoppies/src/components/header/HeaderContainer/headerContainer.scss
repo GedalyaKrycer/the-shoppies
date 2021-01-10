@@ -1,10 +1,13 @@
 @import '../../../sassStyles/mixins';
 
 header {
-    margin-top: 20px;
+    padding: 0 20px;
+    margin: 20px auto 0;
+    max-width: 1264px;
 
-    @include smMinBreakPoint {
-        margin-top: 40px;
+    @include xxlMinBreakPoint {
+        margin: 40px auto 0;
+        padding: 0;
     }
 
    
