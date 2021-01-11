@@ -7,7 +7,8 @@ import Loader from '../../ui/Loader/Loader';
 const MovieSearchContainer = () => {
 
     // Redux State Hooks
-
+    const searching = useSelector(state => state.search.searching)
+    const loadingStatus = useSelector(state => state.search.loading)
     // Redux Dispatch Hooks
 
     // Local States
@@ -21,13 +22,24 @@ const MovieSearchContainer = () => {
 
     }
 
+    let searchResults = null;
+
+    if (searching) {
+
+        if (loadingStatus) {
+            searchResults = <Loader />
+        } else {
+            searchResults = <div>Search Results</div>;
+        }
+    }
+
     return (
         <section>
             <SearchInput
                 handleSearch={handleSearch}
                 searchFilled={searchFilled}
             />
-            <Loader />
+            {searchResults}
         </section>
     )
 }

@@ -1,10 +1,9 @@
 import * as actionTypes from './actionTypes';
 
-// Sets the loading status to true
+// Lets the reducer know the search has started
 export const searchStarted = () => {
     return {
-        type: actionTypes.SEARCH_STARTED,
-        loading: true
+        type: actionTypes.SEARCH_STARTED
     }
 }
 
