@@ -12,6 +12,7 @@ const SearchInput = (props) => {
                 type="text"
                 className="search__input"
                 onChange={(event) => props.handleSearch(event)}
+                value={props.searchValue}
             />
 
             <span style={{ opacity: props.searchFilled ? 0 : 1 }}>Search movies titles</span>
