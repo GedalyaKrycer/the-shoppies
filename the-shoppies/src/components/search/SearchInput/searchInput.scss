@@ -6,11 +6,16 @@
 .search {
 
     position: relative;
+    margin-top: 40px;
     width: 100%;
     display: block;
     opacity: 0;
     -webkit-animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.2s both;
     animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.2s both;
+
+    @include smMinBreakPoint {
+        margin-top: 60px;
+    }
 
     svg {
         height: 16px;
