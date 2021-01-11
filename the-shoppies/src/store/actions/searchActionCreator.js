@@ -38,8 +38,13 @@ export const searchOmdb = (searchTerm) => {
 
         axios.get(omdbUrl)
             .then((res) => {
-                console.log(res.data.Search);
-                dispatch(searchSucceeded(res.data))
+                console.log(res.data);
+                if (res.data.Response) {
+                    dispatch(searchSucceeded(res.data.Search))
+                }
+
+                dispatch(searchFailed(res.data.Error));
+
             })
             .catch((error) => {
                 dispatch(searchFailed(error));
