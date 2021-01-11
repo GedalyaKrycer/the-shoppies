@@ -1,6 +1,13 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+// Forces error message to remove
+export const removeErrorMessage = () => {
+    return {
+        type: actionTypes.SEARCH_REMOVE_ERROR_MESSAGE
+    }
+}
+
 // Lets the reducer know the search has started
 export const searchStarted = () => {
     return {
@@ -42,8 +49,10 @@ export const searchOmdb = (searchTerm) => {
                 if (res.data.Response) {
                     dispatch(searchSucceeded(res.data.Search))
                 }
+                if (res.data.Error) {
+                    dispatch(searchFailed(res.data.Error));
+                }
 
-                dispatch(searchFailed(res.data.Error));
 
             })
             .catch((error) => {

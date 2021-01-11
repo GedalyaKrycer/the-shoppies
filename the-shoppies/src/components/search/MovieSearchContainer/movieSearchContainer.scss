@@ -1,0 +1,9 @@
+@import '../../../sassStyles/variables';
+
+.results__search-value {
+    margin: 30px 0 10px;
+
+    span {
+        color: $primaryDarkColor;
+    }
+}
