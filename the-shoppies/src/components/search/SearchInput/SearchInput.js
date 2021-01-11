@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './searchInput.scss';
 
-const SearchInput = () => {
+
+const SearchInput = (props) => {
 
     // Local States
     const [searchFilled, setSearchFilled] = useState(false);
@@ -21,7 +22,7 @@ const SearchInput = () => {
             <input
                 type="text"
                 className="search__input"
-                onChange={handleSearch}
+                onChange={props.handleSearch}
             />
 
             <span style={{ opacity: searchFilled ? 0 : 1 }}>Search movies titles</span>
