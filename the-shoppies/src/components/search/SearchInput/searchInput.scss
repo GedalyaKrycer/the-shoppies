@@ -1,0 +1,64 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+
+
+.search {
+
+    position: relative;
+    width: 100%;
+    display: block;
+ 
+
+    
+    svg {
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        top: 50%;
+        right: auto;
+        left: 18px;
+        margin-top: -7px;
+        fill: $textColor;
+        transition: 0.2s ease-in;
+    }
+
+    span {
+        opacity: 1;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 24px;
+        color: $textLight1Color;
+        position: absolute;
+        top: 50%;
+        right: auto;
+        left: 47px;
+        margin-top: -12px;
+    }
+
+}
+
+.search__input {
+    padding: 18px 18px 18px 44px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border-style: solid;
+    transition: 0.2s ease-in;
+
+    &:focus {
+        color: #000000;
+        outline: 0;
+        box-shadow: 0 0 0 1px $primaryColor;
+    }
+
+    &:focus ~ svg {
+        fill: $primaryDarkColor;
+    }
+
+
+}
