@@ -17,6 +17,7 @@ const MovieSearchContainer = () => {
     const loadingStatus = useSelector(state => state.search.loading)
     const searchError = useSelector(state => state.search.error)
     const apiErrorMessage = useSelector(state => state.search.errorMessage)
+    const movieListArray = useSelector(state => state.search.omdbResults)
 
     // Redux Dispatch Hooks
     const searchOmdbApi = useDispatch();
@@ -60,7 +61,12 @@ const MovieSearchContainer = () => {
         if (loadingStatus) {
             searchResults = <Loader />
         } else {
-            searchResults = <div>Search Results</div>;
+            searchResults = movieListArray && movieListArray.map((movie, index) => {
+                return <div key={movie.imdbID}>
+                    <p>{movie.Title}</p>
+                    <p>{movie.Year}</p>
+                </div>
+            });
         }
     }
 
