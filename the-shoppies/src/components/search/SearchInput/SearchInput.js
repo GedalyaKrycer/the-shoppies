@@ -12,8 +12,6 @@ const SearchInput = () => {
             setSearchFilled(false);
         }
 
-        console.log(event.target.value)
-
     }
 
 

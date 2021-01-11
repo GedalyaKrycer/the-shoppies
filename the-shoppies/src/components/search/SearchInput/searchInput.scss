@@ -1,5 +1,6 @@
 @import '../../../sassStyles/mixins';
 @import '../../../sassStyles/variables';
+@import '../../../sassStyles/animations';
 
 
 .search {
@@ -7,9 +8,7 @@
     position: relative;
     width: 100%;
     display: block;
- 
 
-    
     svg {
         height: 16px;
         width: 16px;
@@ -34,6 +33,14 @@
         right: auto;
         left: 47px;
         margin-top: -12px;
+    }
+
+    .search__input, 
+    span,
+    svg {
+        opacity: 0;
+        -webkit-animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.2s both;
+        animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.2s both;
     }
 
 }
@@ -62,3 +69,5 @@
 
 
 }
+
+
