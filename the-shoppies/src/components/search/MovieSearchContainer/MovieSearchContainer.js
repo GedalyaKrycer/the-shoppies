@@ -9,6 +9,7 @@ const MovieSearchContainer = () => {
     // Redux State Hooks
     const searching = useSelector(state => state.search.searching)
     const loadingStatus = useSelector(state => state.search.loading)
+
     // Redux Dispatch Hooks
 
     // Local States
@@ -19,6 +20,7 @@ const MovieSearchContainer = () => {
         if (!event.target.value) {
             setSearchFilled(false);
         }
+        console.log(event.target.value)
 
     }
 
