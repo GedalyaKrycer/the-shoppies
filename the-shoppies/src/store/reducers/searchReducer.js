@@ -18,8 +18,8 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, { loading: false, error: false, omdbResults: action.omdbResults });
         case actionTypes.SEARCH_FAILED:
             return updateObject(state, { loading: false, searching: false, error: true, errorMessage: action.error });
-        case actionTypes.SEARCH_REMOVE_ERROR_MESSAGE:
-            return updateObject(state, { error: false });
+        case actionTypes.SEARCH_EMPTY:
+            return updateObject(state, { loading: false, searching: false, error: false, omdbResults: [] });
         default: return state;
     };
 };

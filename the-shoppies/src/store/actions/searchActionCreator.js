@@ -1,10 +1,10 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
-// Forces error message to remove
-export const removeErrorMessage = () => {
+// Removes error messages and results
+export const clearResults = () => {
     return {
-        type: actionTypes.SEARCH_REMOVE_ERROR_MESSAGE
+        type: actionTypes.SEARCH_EMPTY
     }
 }
 

@@ -20,7 +20,7 @@ const MovieSearchContainer = () => {
 
     // Redux Dispatch Hooks
     const searchOmdbApi = useDispatch();
-    const removeErrorMessage = useDispatch();
+    const clearResults = useDispatch();
 
 
     // Waits half a second for the user to stop typing
@@ -45,7 +45,7 @@ const MovieSearchContainer = () => {
         setSearchFilled(true);
         if (!event.target.value) {
             setSearchFilled(false);
-            removeErrorMessage(action.removeErrorMessage())
+            clearResults(action.clearResults())
         }
         setSearchTerm(event.target.value);
     }

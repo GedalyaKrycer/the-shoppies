@@ -1,4 +1,4 @@
 export {
     searchOmdb,
-    removeErrorMessage
+    clearResults
 } from './searchActionCreator'
