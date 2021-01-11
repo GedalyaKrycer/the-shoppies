@@ -1,1 +1,3 @@
-export const SEARCH_STARTED = 'SEARCH_START';
+export const SEARCH_STARTED = 'SEARCH_STARTED';
+export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
+export const SEARCH_FAILED = 'SEARCH_FAILED';

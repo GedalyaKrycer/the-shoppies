@@ -7,3 +7,12 @@ export const searchStarted = () => {
     }
 }
 
+// Receives the results from OMDB API Call 
+export const searchSucceeded = (results) => {
+    return {
+        type: actionTypes.SEARCH_SUCCESS,
+        omdbResults: results
+
+    }
+}
+
