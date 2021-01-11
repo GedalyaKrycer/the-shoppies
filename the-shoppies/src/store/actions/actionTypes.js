@@ -1,0 +1,1 @@
+// export const INIT_INGREDIENTS = 'INIT_INGREDIENTS';
