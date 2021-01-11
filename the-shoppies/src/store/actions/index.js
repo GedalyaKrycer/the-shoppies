@@ -1,0 +1,3 @@
+export {
+    searchStarted
+} from './searchActionCreator'

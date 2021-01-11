@@ -1,1 +1,1 @@
-// export const INIT_INGREDIENTS = 'INIT_INGREDIENTS';
+export const SEARCH_STARTED = 'SEARCH_START';

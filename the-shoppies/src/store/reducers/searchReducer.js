@@ -2,18 +2,16 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../utilities/updateObject';
 
 const initialState = {
-    searchFilled: false,
+    loading: false,
 };
 
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        // case actionTypes.AUTH_START:
-        // return authStart(state, action);
-        // default: return state;
+        case actionTypes.SEARCH_STARTED:
+            return updateObject(state, { loading: true });
+        default: return state;
     };
-
-    return state;
 };
 
 export default reducer;
