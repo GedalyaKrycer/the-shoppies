@@ -13,13 +13,30 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SEARCH_STARTED:
-            return updateObject(state, { loading: true, searching: true });
+            return updateObject(state, {
+                loading: true,
+                searching: true
+            });
         case actionTypes.SEARCH_SUCCESS:
-            return updateObject(state, { loading: false, error: false, omdbResults: action.omdbResults });
+            return updateObject(state, {
+                loading: false,
+                error: false,
+                omdbResults: action.omdbResults
+            });
         case actionTypes.SEARCH_FAILED:
-            return updateObject(state, { loading: false, searching: false, error: true, errorMessage: action.error });
+            return updateObject(state, {
+                loading: false,
+                searching: false,
+                error: true,
+                errorMessage: action.error
+            });
         case actionTypes.SEARCH_EMPTY:
-            return updateObject(state, { loading: false, searching: false, error: false, omdbResults: [] });
+            return updateObject(state, {
+                loading: false,
+                searching: false,
+                error: false,
+                omdbResults: []
+            });
         default: return state;
     };
 };
