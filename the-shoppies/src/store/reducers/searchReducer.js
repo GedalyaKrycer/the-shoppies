@@ -4,7 +4,9 @@ import { updateObject } from '../../utilities/updateObject';
 const initialState = {
     searching: false,
     loading: false,
-    omdbResults: []
+    omdbResults: [],
+    error: false,
+    errorMessage: ''
 };
 
 
@@ -14,6 +16,8 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, { loading: true, searching: true });
         case actionTypes.SEARCH_SUCCESS:
             return updateObject(state, { loading: false, omdbResults: action.omdbResults });
+        case actionTypes.SEARCH_FAILED:
+            return updateObject(state, { loading: false, searching: false, error: true, errorMessage: action.error });
         default: return state;
     };
 };

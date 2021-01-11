@@ -4,6 +4,7 @@ import './movieSearchContainer.scss';
 import SearchInput from '../SearchInput/SearchInput';
 import Loader from '../../ui/Loader/Loader';
 import useDebounce from '../../../utilities/debounceHook';
+import * as action from '../../../store/actions/index';
 
 const MovieSearchContainer = () => {
 
@@ -14,9 +15,11 @@ const MovieSearchContainer = () => {
     // Redux State Hooks
     const searching = useSelector(state => state.search.searching)
     const loadingStatus = useSelector(state => state.search.loading)
+    const searchError = useSelector(state => state.search.error)
+    const apiErrorMessage = useSelector(state => state.search.errorMessage)
 
     // Redux Dispatch Hooks
-
+    const searchOmdbApi = useDispatch();
 
 
     // Waits half a second for the user to stop typing
@@ -29,12 +32,12 @@ const MovieSearchContainer = () => {
             return;
         }
 
-        // Carries out actions once the Denouncer Hook is ready
+        // Send search term to Redux once the Denouncer Hook is ready
         if (debouncedSearchTerm) {
-            console.log(searchTerm);
+            searchOmdbApi(action.searchOmdb(searchTerm));
         }
 
-    }, [debouncedSearchTerm, searchTerm]);
+    }, [debouncedSearchTerm]);
 
     // Logs search input and turns on/off label
     const handleSearch = (event) => {
@@ -67,6 +70,7 @@ const MovieSearchContainer = () => {
                 searchValue={searchTerm}
             />
             {searchResults}
+            {searchError ? <p>{apiErrorMessage}</p> : null}
         </section>
     )
 }
