@@ -47,13 +47,30 @@ export const searchOmdb = (searchTerm) => {
             .then((res) => {
                 const response = res.data;
                 if (response.Response) {
-                    let movieList = response.Search;
+                    let resultList = response.Search;
 
-                    if (Array.isArray(movieList)) {
-                        movieList = movieList.length > 5 ? movieList.slice(0, 5) : movieList;
+                    // Checks if the results list is an array
+                    if (Array.isArray(resultList)) {
+
+                        // If it is more then 5 items it limits to 5
+                        resultList = resultList.length > 5 ? resultList.slice(0, 5) : resultList;
+
+                        // Loop to ensure series have an end date
+                        resultList.forEach(result => {
+
+                            // Creates an array of the year
+                            let resultYearArray = result.Year.split('');
+
+                            // If there is no end date this will add a "-Present"
+                            if (resultYearArray.length < 6) {
+                                let updatedResultYear = resultYearArray.concat("–Present")
+
+                                return result.Year = updatedResultYear.join("")
+                            }
+                        });
                     }
 
-                    dispatch(searchSucceeded(movieList))
+                    dispatch(searchSucceeded(resultList))
                 }
                 if (res.data.Error) {
                     dispatch(searchFailed(res.data.Error));

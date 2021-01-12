@@ -1,5 +1,6 @@
 import React from 'react';
-import './metaDetailsMovieSearch.scss'
+import './metaDetailsMovieSearch.scss';
+import ButtonPrimary from '../../ui/ButtonPrimary/ButtonPrimary';
 
 const MetaDetailsMovieSearch = (props) => {
     return (
@@ -10,6 +11,10 @@ const MetaDetailsMovieSearch = (props) => {
                 <h3>{props.title}</h3>
                 <h4>{props.year}  •  {props.type}</h4>
             </div>
+            <ButtonPrimary
+                disable={props.disable}
+                handleClick={props.handleClick}
+            >Nominate</ButtonPrimary>
 
         </div>
     )

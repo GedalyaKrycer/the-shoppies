@@ -6,7 +6,6 @@ import Loader from '../../ui/Loader/Loader';
 import useDebounce from '../../../utilities/debounceHook';
 import * as action from '../../../store/actions/index';
 import MovieSearchMetaInfo from '../MetaDetailsMovieSearch/MetaDetailsMovieSearch';
-import ButtonPrimary from '../../ui/ButtonPrimary/ButtonPrimary';
 
 const MovieSearchContainer = () => {
 
