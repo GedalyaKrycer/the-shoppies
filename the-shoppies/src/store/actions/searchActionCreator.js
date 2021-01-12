@@ -55,7 +55,7 @@ export const searchOmdb = (searchTerm) => {
                     if (Array.isArray(resultList)) {
 
                         // If it is more then 5 items it limits to 5
-                        resultList = resultList.length > 5 ? resultList.slice(0, 5) : resultList;
+                        resultList = resultList.length > 4 ? resultList.slice(0, 4) : resultList;
 
                         // Loop to ensure series have an end date if it is a series only
                         resultList.forEach(result => {

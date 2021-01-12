@@ -1,15 +1,13 @@
 @import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
 
 .bodyContainer {
-    max-width: 1264px;
+    max-width: $screen-full;
     margin: 64px auto 0;
-    padding: 0 20px;
+    padding: 0 5%;
     
     @include mdMinBreakPoint {
         margin: 96px auto 0;
     }
 
-    @include xxlMinBreakPoint {
-        padding: 0;
-    }
 }

@@ -1,13 +1,13 @@
 @import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
 
 header {
-    padding: 0 20px;
+    padding: 0 5%;
     margin: 20px auto 0;
-    max-width: 1264px;
+    max-width: $screen-full;
 
     @include xxlMinBreakPoint {
         margin: 40px auto 0;
-        padding: 0;
     }
 
    
