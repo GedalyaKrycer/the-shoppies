@@ -9,7 +9,7 @@ const MetaDetailsMovieSearch = (props) => {
             style={{ '--delay': props.index }}>
             <div className="result-row__meta-info">
                 <h3>{props.title}</h3>
-                <h4>{props.year}  •  {props.type}</h4>
+                <h4>{props.year}  • {props.type}</h4>
             </div>
             <ButtonPrimary
                 disable={props.disable}

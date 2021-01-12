@@ -1,0 +1,21 @@
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/animations';
+
+.search-error {
+    background-color: $warningLight1Color;
+    border: 1px solid $warningLight1Color;
+    color: $warningColor;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    opacity: 0;
+    -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) .2s both;
+    animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) .2s both;
+
+
+    p {
+        margin: 0;
+    }
+
+    
+}

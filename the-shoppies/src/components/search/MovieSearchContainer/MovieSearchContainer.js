@@ -6,6 +6,7 @@ import Loader from '../../ui/Loader/Loader';
 import useDebounce from '../../../utilities/debounceHook';
 import * as action from '../../../store/actions/index';
 import MovieSearchMetaInfo from '../MetaDetailsMovieSearch/MetaDetailsMovieSearch';
+import SearchErrorMessage from '../SearchErrorMessage/SearchErrorMessage';
 
 const MovieSearchContainer = () => {
 
@@ -88,7 +89,9 @@ const MovieSearchContainer = () => {
                 : null}
 
             {searchResults}
-            {searchError ? <p>{apiErrorMessage}</p> : null}
+            {searchError
+                ? <SearchErrorMessage error={apiErrorMessage} />
+                : null}
         </section>
     )
 }
