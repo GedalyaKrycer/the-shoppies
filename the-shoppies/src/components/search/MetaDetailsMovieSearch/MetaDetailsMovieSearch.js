@@ -5,7 +5,7 @@ import ButtonPrimary from '../../ui/ButtonPrimary/ButtonPrimary';
 const MetaDetailsMovieSearch = (props) => {
     return (
         <div
-            className="result-row"
+            className={`result-row ${props.exitResults ? "result-row--exit" : null}`}
             style={{ '--delay': props.index }}>
             <div className="result-row__meta-info">
                 <h3>{props.title}</h3>

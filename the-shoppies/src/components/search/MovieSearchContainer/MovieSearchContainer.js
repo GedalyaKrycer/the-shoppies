@@ -13,6 +13,7 @@ const MovieSearchContainer = () => {
     // Local States
     const [searchFilled, setSearchFilled] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [triggerExitResults, setTriggerExitResults] = useState(false);
 
     // Redux State Hooks
     const searching = useSelector(state => state.search.searching)
@@ -46,15 +47,24 @@ const MovieSearchContainer = () => {
     // Logs search input and turns on/off label
     const handleSearch = (event) => {
         setSearchFilled(true);
+        setTriggerExitResults(false);
         if (!event.target.value) {
             setSearchFilled(false);
+            setTriggerExitResults(true);
             clearResults(action.clearResults())
         }
         setSearchTerm(event.target.value);
     }
 
+    // Nominate Button Clicked
     const handleNominate = (index) => {
         console.log(index)
+
+        setTriggerExitResults(true);
+
+        // setSearchFilled(false);
+        // clearResults(action.clearResults())
+        // setSearchTerm('');
     }
 
     // Search Results Display
@@ -71,6 +81,7 @@ const MovieSearchContainer = () => {
 
                 return <MovieSearchMetaInfo
                     key={movie.imdbID}
+                    exitResults={triggerExitResults}
                     title={movie.Title}
                     year={movie.Year}
                     type={movie.Type}
