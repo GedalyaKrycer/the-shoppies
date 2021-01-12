@@ -1,11 +1,15 @@
 import React from 'react';
-import './buttonPrimary';
+import './buttonPrimary.scss';
 
-const ButtonPrimary = () => {
+const ButtonPrimary = (props) => {
     return (
-        <div>
-
-        </div>
+        <button
+            className="buttonPrimary"
+            disabled={props.disable}
+            onClick={props.handleClick}
+        >
+            {props.children}
+        </button>
     )
 }
 

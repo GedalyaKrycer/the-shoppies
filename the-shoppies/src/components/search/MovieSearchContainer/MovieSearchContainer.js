@@ -6,6 +6,7 @@ import Loader from '../../ui/Loader/Loader';
 import useDebounce from '../../../utilities/debounceHook';
 import * as action from '../../../store/actions/index';
 import MovieSearchMetaInfo from '../MetaDetailsMovieSearch/MetaDetailsMovieSearch';
+import ButtonPrimary from '../../ui/ButtonPrimary/ButtonPrimary';
 
 const MovieSearchContainer = () => {
 
@@ -63,11 +64,7 @@ const MovieSearchContainer = () => {
             searchResults = <Loader />
         } else {
             searchResults = movieListArray && movieListArray.map((movie, index) => {
-                // return <div key={movie.imdbID}>
-                //     <p>{movie.Title}</p>
-                //     <p>{movie.Year}</p>
-                //     <p>{movie.Type}</p>
-                // </div>
+
                 return <MovieSearchMetaInfo
                     key={movie.imdbID}
                     title={movie.Title}
