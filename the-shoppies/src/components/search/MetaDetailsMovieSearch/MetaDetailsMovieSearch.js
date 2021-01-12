@@ -1,12 +1,14 @@
 import React from 'react';
 import './metaDetailsMovieSearch.scss'
 
-const MetaDetailsMovieSearch = () => {
+const MetaDetailsMovieSearch = (props) => {
     return (
-        <div className="result-row">
+        <div
+            className="result-row"
+            style={{ '--delay': props.index }}>
             <div className="result-row__meta-info">
-                <h3>Movie Title</h3>
-                <h4>1920  •  Movie</h4>
+                <h3>{props.title}</h3>
+                <h4>{props.year}  •  {props.type}</h4>
             </div>
 
         </div>

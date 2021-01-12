@@ -1,9 +1,15 @@
 @import '../../../sassStyles/variables';
+@import '../../../sassStyles/animations';
 
 .result-row {
     padding: 25px 0;
+    margin-top: -1px;
     border-top: 1px solid $secondaryLight3Color;
     border-bottom: 1px solid $secondaryLight3Color;
+    opacity: 0;
+
+    -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) calc(0.25s * var(--delay)) both;
+	        animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) calc(0.25s * var(--delay)) both;
 
     &__meta-info {
         h3 {
@@ -12,6 +18,8 @@
 
         h4 {
             color: $textColor;
+            text-transform: capitalize;
+            margin-top: 2px;
         }
     }
 

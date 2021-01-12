@@ -68,7 +68,13 @@ const MovieSearchContainer = () => {
                 //     <p>{movie.Year}</p>
                 //     <p>{movie.Type}</p>
                 // </div>
-                return <MovieSearchMetaInfo />
+                return <MovieSearchMetaInfo
+                    key={movie.imdbID}
+                    title={movie.Title}
+                    year={movie.Year}
+                    type={movie.Type}
+                    index={index}
+                />
             });
         }
     }
@@ -86,7 +92,6 @@ const MovieSearchContainer = () => {
                 : null}
 
             {searchResults}
-            <MovieSearchMetaInfo />
             {searchError ? <p>{apiErrorMessage}</p> : null}
         </section>
     )
