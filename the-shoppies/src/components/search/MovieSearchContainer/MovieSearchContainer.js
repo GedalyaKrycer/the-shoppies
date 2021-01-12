@@ -21,6 +21,7 @@ const MovieSearchContainer = () => {
     const searchError = useSelector(state => state.search.error)
     const apiErrorMessage = useSelector(state => state.search.errorMessage)
     const movieListArray = useSelector(state => state.search.omdbResults)
+    const nominationList = useSelector(state => state.nominate.nominationList)
 
     // Redux Dispatch Hooks
     const searchOmdbApi = useDispatch();
@@ -56,6 +57,11 @@ const MovieSearchContainer = () => {
         }
         setSearchTerm(event.target.value);
     }
+
+    // Checks Nomination Data
+    useEffect(() => {
+        console.log(nominationList)
+    }, [nominationList])
 
 
 

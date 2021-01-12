@@ -3,7 +3,6 @@ import { updateObject } from '../../utilities/updateObject';
 
 const initialState = {
     loading: false,
-    omdbNominationResult: [],
     error: false,
     errorMessage: '',
     nominationList: [],
@@ -21,7 +20,7 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, {
                 loading: false,
                 error: false,
-                omdbNominationResult: action.omdbResult
+                nominationList: state.nominationList.concat(action.omdbResult)
             });
         case actionTypes.NOMINATED_FAILED:
             return updateObject(state, {
