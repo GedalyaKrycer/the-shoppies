@@ -56,15 +56,20 @@ const MovieSearchContainer = () => {
         setSearchTerm(event.target.value);
     }
 
+
+
     // Nominate Button Clicked
     const handleNominate = (index) => {
         console.log(index)
 
         setTriggerExitResults(true);
 
-        // setSearchFilled(false);
-        // clearResults(action.clearResults())
-        // setSearchTerm('');
+        setTimeout(() => {
+            console.log("Timer ran")
+            setSearchFilled(false);
+            clearResults(action.clearResults())
+            setSearchTerm('');
+        }, 600);
     }
 
     // Search Results Display
