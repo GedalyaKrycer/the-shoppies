@@ -1,0 +1,19 @@
+@import '../../../sassStyles/variables';
+
+.result-row {
+    padding: 25px 0;
+    border-top: 1px solid $secondaryLight3Color;
+    border-bottom: 1px solid $secondaryLight3Color;
+
+    &__meta-info {
+        h3 {
+            color: $primaryDarkColor
+        }
+
+        h4 {
+            color: $textColor;
+        }
+    }
+
+
+}

@@ -5,6 +5,7 @@ import SearchInput from '../SearchInput/SearchInput';
 import Loader from '../../ui/Loader/Loader';
 import useDebounce from '../../../utilities/debounceHook';
 import * as action from '../../../store/actions/index';
+import MovieSearchMetaInfo from '../MetaDetailsMovieSearch/MetaDetailsMovieSearch';
 
 const MovieSearchContainer = () => {
 
@@ -62,10 +63,12 @@ const MovieSearchContainer = () => {
             searchResults = <Loader />
         } else {
             searchResults = movieListArray && movieListArray.map((movie, index) => {
-                return <div key={movie.imdbID}>
-                    <p>{movie.Title}</p>
-                    <p>{movie.Year}</p>
-                </div>
+                // return <div key={movie.imdbID}>
+                //     <p>{movie.Title}</p>
+                //     <p>{movie.Year}</p>
+                //     <p>{movie.Type}</p>
+                // </div>
+                return <MovieSearchMetaInfo />
             });
         }
     }
@@ -83,6 +86,7 @@ const MovieSearchContainer = () => {
                 : null}
 
             {searchResults}
+            <MovieSearchMetaInfo />
             {searchError ? <p>{apiErrorMessage}</p> : null}
         </section>
     )
