@@ -17,6 +17,7 @@ export const searchStarted = () => {
 
 // Receives the results from OMDB API Call 
 export const searchSucceeded = (results) => {
+    console.log("Search ActionCreator Success:", results)
     return {
         type: actionTypes.SEARCH_SUCCESS,
         omdbResults: results
@@ -46,10 +47,9 @@ export const searchOmdb = (searchTerm) => {
         axios.get(omdbUrl)
             .then((res) => {
                 const response = res.data;
+
                 if (response.Response) {
                     let resultList = response.Search;
-
-                    console.log(resultList)
 
                     // Checks if the results list is an array
                     if (Array.isArray(resultList)) {

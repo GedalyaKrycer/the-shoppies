@@ -53,6 +53,10 @@ const MovieSearchContainer = () => {
         setSearchTerm(event.target.value);
     }
 
+    const handleNominate = (index) => {
+        console.log(index)
+    }
+
     // Search Results Display
     let searchResults = null;
 
@@ -71,6 +75,8 @@ const MovieSearchContainer = () => {
                     year={movie.Year}
                     type={movie.Type}
                     index={index}
+                    disable={false}
+                    handleClick={() => handleNominate(index)}
                 />
             });
         }
