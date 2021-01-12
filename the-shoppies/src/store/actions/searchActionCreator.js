@@ -45,9 +45,15 @@ export const searchOmdb = (searchTerm) => {
 
         axios.get(omdbUrl)
             .then((res) => {
-                console.log(res.data);
-                if (res.data.Response) {
-                    dispatch(searchSucceeded(res.data.Search))
+                const response = res.data;
+                if (response.Response) {
+                    let movieList = response.Search;
+
+                    if (Array.isArray(movieList)) {
+                        movieList = movieList.length > 5 ? movieList.slice(0, 5) : movieList;
+                    }
+
+                    dispatch(searchSucceeded(movieList))
                 }
                 if (res.data.Error) {
                     dispatch(searchFailed(res.data.Error));
