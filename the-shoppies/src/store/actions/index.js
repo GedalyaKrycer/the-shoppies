@@ -1,4 +1,8 @@
 export {
     searchOmdb,
     clearResults
-} from './searchActionCreator'
+} from './searchActionCreator';
+
+export {
+    queryOmdbNomination
+} from './nominateActionCreator';

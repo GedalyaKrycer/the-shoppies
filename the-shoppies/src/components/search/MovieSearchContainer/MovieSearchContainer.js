@@ -17,7 +17,7 @@ const MovieSearchContainer = () => {
 
     // Redux State Hooks
     const searching = useSelector(state => state.search.searching)
-    const loadingStatus = useSelector(state => state.search.loading)
+    const searchLoadingStatus = useSelector(state => state.search.loading)
     const searchError = useSelector(state => state.search.error)
     const apiErrorMessage = useSelector(state => state.search.errorMessage)
     const movieListArray = useSelector(state => state.search.omdbResults)
@@ -25,6 +25,7 @@ const MovieSearchContainer = () => {
     // Redux Dispatch Hooks
     const searchOmdbApi = useDispatch();
     const clearResults = useDispatch();
+    const queryOmdbNomination = useDispatch();
 
 
     // Waits half a second for the user to stop typing
@@ -59,17 +60,18 @@ const MovieSearchContainer = () => {
 
 
     // Nominate Button Clicked
-    const handleNominate = (index) => {
+    const handleNominate = (index, movieTitle, movieYear) => {
         console.log(index)
 
         setTriggerExitResults(true);
 
         setTimeout(() => {
-            console.log("Timer ran")
             setSearchFilled(false);
             clearResults(action.clearResults())
             setSearchTerm('');
-        }, 600);
+        }, 630);
+
+        queryOmdbNomination(action.queryOmdbNomination(movieTitle, movieYear));
     }
 
     // Search Results Display
@@ -79,7 +81,7 @@ const MovieSearchContainer = () => {
     if (searching) {
 
         // ...Then a loader will show until the api returns results
-        if (loadingStatus) {
+        if (searchLoadingStatus) {
             searchResults = <Loader />
         } else {
             searchResults = movieListArray && movieListArray.map((movie, index) => {
@@ -92,7 +94,7 @@ const MovieSearchContainer = () => {
                     type={movie.Type}
                     index={index}
                     disable={false}
-                    handleClick={() => handleNominate(index)}
+                    handleClick={() => handleNominate(index, movie.Title, movie.Year)}
                 />
             });
         }

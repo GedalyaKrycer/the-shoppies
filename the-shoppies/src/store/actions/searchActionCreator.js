@@ -17,7 +17,6 @@ export const searchStarted = () => {
 
 // Receives the results from OMDB API Call 
 export const searchSucceeded = (results) => {
-    console.log("Search ActionCreator Success:", results)
     return {
         type: actionTypes.SEARCH_SUCCESS,
         omdbResults: results
@@ -35,7 +34,7 @@ export const searchFailed = (error) => {
 }
 
 
-// Fires if there is an error from the API
+// Searches the API asynchronously 
 export const searchOmdb = (searchTerm) => {
 
     return dispatch => {

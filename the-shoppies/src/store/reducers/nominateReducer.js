@@ -2,40 +2,42 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../utilities/updateObject';
 
 const initialState = {
-    searching: false,
     loading: false,
-    omdbResults: [],
+    omdbNominationResult: [],
     error: false,
-    errorMessage: ''
+    errorMessage: '',
+    nominationList: [],
+    nominatedAlready: false
 };
 
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.SEARCH_STARTED:
+        case actionTypes.NOMINATED_STARTED:
             return updateObject(state, {
-                loading: true,
-                searching: true
+                loading: true
             });
-        case actionTypes.SEARCH_SUCCESS:
+        case actionTypes.NOMINATED_SUCCESS:
             return updateObject(state, {
                 loading: false,
                 error: false,
-                omdbResults: action.omdbResults
+                omdbNominationResult: action.omdbResult
             });
-        case actionTypes.SEARCH_FAILED:
+        case actionTypes.NOMINATED_FAILED:
             return updateObject(state, {
                 loading: false,
                 searching: false,
                 error: true,
                 errorMessage: action.error
             });
-        case actionTypes.SEARCH_EMPTY:
+        case actionTypes.NOMINATED_ALREADY:
             return updateObject(state, {
-                loading: false,
-                searching: false,
-                error: false,
-                omdbResults: []
+                nominatedAlready: true
+            });
+        case actionTypes.NOMINATION_CANCELED:
+            return updateObject(state, {
+                nominatedAlready: false,
+
             });
         default: return state;
     };
