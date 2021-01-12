@@ -49,21 +49,32 @@ export const searchOmdb = (searchTerm) => {
                 if (response.Response) {
                     let resultList = response.Search;
 
+                    console.log(resultList)
+
                     // Checks if the results list is an array
                     if (Array.isArray(resultList)) {
 
                         // If it is more then 5 items it limits to 5
                         resultList = resultList.length > 5 ? resultList.slice(0, 5) : resultList;
 
-                        // Loop to ensure series have an end date
+                        // Loop to ensure series have an end date if it is a series only
                         resultList.forEach(result => {
 
                             // Creates an array of the year
                             let resultYearArray = result.Year.split('');
 
-                            // If there is no end date this will add a "-Present"
-                            if (resultYearArray.length < 6) {
-                                let updatedResultYear = resultYearArray.concat("–Present")
+                            // If there is no end date this will add a "Present"
+                            if (resultYearArray.length < 6
+                                && result.Type === "series") {
+                                let updatedResultYear = resultYearArray.concat("Present")
+
+                                return result.Year = updatedResultYear.join("")
+                            }
+
+                            // If a movie has "-Present", this will remove it from the year
+                            if (resultYearArray.length > 4
+                                && result.Type === "movie") {
+                                let updatedResultYear = resultYearArray.slice(0, 4)
 
                                 return result.Year = updatedResultYear.join("")
                             }
