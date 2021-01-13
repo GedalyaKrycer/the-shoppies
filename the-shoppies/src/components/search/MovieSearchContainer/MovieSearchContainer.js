@@ -7,14 +7,13 @@ import useDebounce from '../../../utilities/debounceHook';
 import * as action from '../../../store/actions/index';
 import MovieSearchMetaInfo from '../MetaDetailsMovieSearch/MetaDetailsMovieSearch';
 import SearchErrorMessage from '../SearchErrorMessage/SearchErrorMessage';
-import { useToggle } from "../../../utilities/toggleHook";
 
 const MovieSearchContainer = () => {
 
     // Local States
     const [searchFilled, setSearchFilled] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
-    // const [searchSeries, setSearchSeries] = useState('');
+    const [searchSeries, setSearchSeries] = useState(false);
     const [triggerExitResults, setTriggerExitResults] = useState(false);
 
     // Redux State Hooks
@@ -30,9 +29,6 @@ const MovieSearchContainer = () => {
     const clearResults = useDispatch();
     const queryOmdbNomination = useDispatch();
 
-    // Toggle Custom Hook
-    const [isToggled, toggle] = useToggle(false);
-
 
     // Waits half a second for the user to stop typing
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -46,7 +42,7 @@ const MovieSearchContainer = () => {
 
         // Send search term to Redux once the Denouncer Hook is ready
         if (debouncedSearchTerm) {
-            searchOmdbApi(action.searchOmdb(searchTerm, isToggled));
+            searchOmdbApi(action.searchOmdb(searchTerm, searchSeries));
         }
 
     }, [debouncedSearchTerm]);
@@ -123,9 +119,9 @@ const MovieSearchContainer = () => {
                 handleSearch={handleSearch}
                 searchFilled={searchFilled}
                 searchValue={searchTerm}
+                handleSeriesToggle={setSearchSeries}
+                seriesToggle={searchSeries}
             />
-
-            {/* <ToggleSeries toggled={toggle}> */}
 
             {searchTerm
                 ? <h3 className="results__search-value">Results for: <span>"{searchTerm}"</span></h3>

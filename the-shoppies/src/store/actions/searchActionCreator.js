@@ -44,9 +44,9 @@ export const searchOmdb = (searchTerm, seriesToggle) => {
         let omdbUrl = null;
 
         if (seriesToggle) {
-            omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&type=movie&apikey=${process.env.REACT_APP_OMDB_KEY}`;
-        } else {
             omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
+        } else {
+            omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&type=movie&apikey=${process.env.REACT_APP_OMDB_KEY}`;
         }
 
 

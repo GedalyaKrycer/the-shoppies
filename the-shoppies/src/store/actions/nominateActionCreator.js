@@ -41,7 +41,6 @@ export const nominationQueryFailed = (error) => {
     }
 }
 
-
 // Searches the API asynchronously 
 export const queryOmdbNomination = (movieTitle, movieYear) => {
 
