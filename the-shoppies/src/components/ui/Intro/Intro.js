@@ -4,8 +4,8 @@ import './intro.scss';
 const Intro = () => {
     return (
         <div className="intro">
-            <h1>Nominate — <span>amazing movies</span></h1>
-            <p className="typography__subhead ">Search below to nominate your top 5 favorite movies.</p>
+            <h1>Nominate — <span>amazing cinema</span></h1>
+            <p className="typography__subhead ">Search below to nominate your top 5 favorite movies & series.</p>
         </div>
     )
 }
