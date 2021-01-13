@@ -17,10 +17,20 @@ const reducer = (state = initialState, action) => {
                 loading: true
             });
         case actionTypes.NOMINATED_SUCCESS:
+            let updatedNominationList = null;
+
+            const movieAlreadyNominated = state.nominationList.find(result => result.Title === action.omdbResult.Title)
+
+            if (movieAlreadyNominated) {
+                updatedNominationList = state.nominationList;
+            } else {
+                updatedNominationList = state.nominationList.concat(action.omdbResult)
+            }
+
             return updateObject(state, {
                 loading: false,
                 error: false,
-                nominationList: state.nominationList.concat(action.omdbResult)
+                nominationList: updatedNominationList
             });
         case actionTypes.NOMINATED_FAILED:
             return updateObject(state, {

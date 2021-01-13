@@ -15,6 +15,7 @@ const MovieSearchContainer = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchSeries, setSearchSeries] = useState(false);
     const [triggerExitResults, setTriggerExitResults] = useState(false);
+    const [disableNomination, setDisableNomination] = useState(false);
 
     // Redux State Hooks
     const searching = useSelector(state => state.search.searching)
@@ -62,33 +63,6 @@ const MovieSearchContainer = () => {
     }
 
 
-    // Search Results Display
-    let searchResults = null;
-
-    // If the person is currently searching...
-    if (searching) {
-
-        // ...Then a loader will show until the api returns results
-        if (searchLoadingStatus) {
-            searchResults = <Loader />
-        } else {
-            searchResults = movieListArray && movieListArray.map((movie, index) => {
-
-                return <MovieSearchMetaInfo
-                    key={movie.imdbID}
-                    exitResults={triggerExitResults}
-                    title={movie.Title}
-                    year={movie.Year}
-                    type={movie.Type}
-                    index={index}
-                    disable={false}
-                    handleClick={() => handleNominate(movie.Title, movie.Year)}
-                />
-            });
-        }
-    }
-
-
     // Checks Nomination Data
     useEffect(() => {
         console.log(nominationList)
@@ -111,6 +85,36 @@ const MovieSearchContainer = () => {
 
         // Sends nominated movie to new API call
         queryOmdbNomination(action.queryOmdbNomination(movieTitle, movieYear));
+    }
+
+    // Search Results Display
+    let searchResults = null;
+
+    // If the person is currently searching...
+    if (searching) {
+
+        // ...Then a loader will show until the api returns results
+        if (searchLoadingStatus) {
+            searchResults = <Loader />
+        } else {
+            searchResults = movieListArray && movieListArray.map((movie, index) => {
+
+                const nominated = nominationList.find(result => result.Title === movie.Title)
+
+
+
+                return <MovieSearchMetaInfo
+                    key={movie.imdbID}
+                    exitResults={triggerExitResults}
+                    title={movie.Title}
+                    year={movie.Year}
+                    type={movie.Type}
+                    index={index}
+                    disable={nominated}
+                    handleClick={() => handleNominate(movie.Title, movie.Year)}
+                />
+            });
+        }
     }
 
     return (
