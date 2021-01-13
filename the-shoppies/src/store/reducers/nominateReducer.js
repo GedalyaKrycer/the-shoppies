@@ -5,8 +5,7 @@ const initialState = {
     loading: false,
     error: false,
     errorMessage: '',
-    nominationList: [],
-    nominatedAlready: false
+    nominationList: []
 };
 
 
@@ -39,14 +38,9 @@ const reducer = (state = initialState, action) => {
                 error: true,
                 errorMessage: action.error
             });
-        case actionTypes.NOMINATED_ALREADY:
-            return updateObject(state, {
-                nominatedAlready: true
-            });
         case actionTypes.NOMINATION_CANCELED:
             const updatedList = state.nominationList.filter(movieTitle => movieTitle !== action.movieTitle);
             return updateObject(state, {
-                nominatedAlready: false,
                 nominationList: updatedList
             });
         default: return state;

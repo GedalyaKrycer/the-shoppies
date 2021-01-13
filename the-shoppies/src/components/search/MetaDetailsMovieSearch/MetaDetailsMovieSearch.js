@@ -14,7 +14,10 @@ const MetaDetailsMovieSearch = (props) => {
             <ButtonPrimary
                 disable={props.disable}
                 handleClick={props.handleClick}
-            >Nominate</ButtonPrimary>
+            >
+                {props.disable ? "Nominated" : "Nominate"}
+
+            </ButtonPrimary>
 
         </div>
     )

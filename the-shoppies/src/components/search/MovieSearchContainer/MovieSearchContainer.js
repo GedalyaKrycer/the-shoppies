@@ -15,7 +15,6 @@ const MovieSearchContainer = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchSeries, setSearchSeries] = useState(false);
     const [triggerExitResults, setTriggerExitResults] = useState(false);
-    const [disableNomination, setDisableNomination] = useState(false);
 
     // Redux State Hooks
     const searching = useSelector(state => state.search.searching)
@@ -63,13 +62,6 @@ const MovieSearchContainer = () => {
     }
 
 
-    // Checks Nomination Data
-    useEffect(() => {
-        console.log(nominationList)
-    }, [nominationList])
-
-
-
     // Nominate Button Clicked
     const handleNominate = (movieTitle, movieYear) => {
 
@@ -99,9 +91,8 @@ const MovieSearchContainer = () => {
         } else {
             searchResults = movieListArray && movieListArray.map((movie, index) => {
 
-                const nominated = nominationList.find(result => result.Title === movie.Title)
-
-
+                // Checks if movie has been nominated already
+                const isNominated = nominationList.find(result => result.Title === movie.Title)
 
                 return <MovieSearchMetaInfo
                     key={movie.imdbID}
@@ -110,7 +101,7 @@ const MovieSearchContainer = () => {
                     year={movie.Year}
                     type={movie.Type}
                     index={index}
-                    disable={nominated}
+                    disable={isNominated}
                     handleClick={() => handleNominate(movie.Title, movie.Year)}
                 />
             });
