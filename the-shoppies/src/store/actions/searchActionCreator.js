@@ -35,13 +35,20 @@ export const searchFailed = (error) => {
 
 
 // Searches the API asynchronously 
-export const searchOmdb = (searchTerm) => {
+export const searchOmdb = (searchTerm, seriesToggle) => {
 
     return dispatch => {
         dispatch(searchStarted());
 
         // OMDB Movie API
-        const omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
+        let omdbUrl = null;
+
+        if (seriesToggle) {
+            omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&type=movie&apikey=${process.env.REACT_APP_OMDB_KEY}`;
+        } else {
+            omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
+        }
+
 
         axios.get(omdbUrl)
             .then((res) => {

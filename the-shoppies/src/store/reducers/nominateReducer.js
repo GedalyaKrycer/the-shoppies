@@ -34,9 +34,10 @@ const reducer = (state = initialState, action) => {
                 nominatedAlready: true
             });
         case actionTypes.NOMINATION_CANCELED:
+            const updatedList = state.nominationList.filter(movieTitle => movieTitle !== action.movieTitle);
             return updateObject(state, {
                 nominatedAlready: false,
-
+                nominationList: updatedList
             });
         default: return state;
     };

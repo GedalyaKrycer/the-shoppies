@@ -7,12 +7,14 @@ import useDebounce from '../../../utilities/debounceHook';
 import * as action from '../../../store/actions/index';
 import MovieSearchMetaInfo from '../MetaDetailsMovieSearch/MetaDetailsMovieSearch';
 import SearchErrorMessage from '../SearchErrorMessage/SearchErrorMessage';
+import { useToggle } from "../../../utilities/toggleHook";
 
 const MovieSearchContainer = () => {
 
     // Local States
     const [searchFilled, setSearchFilled] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    // const [searchSeries, setSearchSeries] = useState('');
     const [triggerExitResults, setTriggerExitResults] = useState(false);
 
     // Redux State Hooks
@@ -28,6 +30,9 @@ const MovieSearchContainer = () => {
     const clearResults = useDispatch();
     const queryOmdbNomination = useDispatch();
 
+    // Toggle Custom Hook
+    const [isToggled, toggle] = useToggle(false);
+
 
     // Waits half a second for the user to stop typing
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -41,7 +46,7 @@ const MovieSearchContainer = () => {
 
         // Send search term to Redux once the Denouncer Hook is ready
         if (debouncedSearchTerm) {
-            searchOmdbApi(action.searchOmdb(searchTerm));
+            searchOmdbApi(action.searchOmdb(searchTerm, isToggled));
         }
 
     }, [debouncedSearchTerm]);
@@ -50,35 +55,16 @@ const MovieSearchContainer = () => {
     const handleSearch = (event) => {
         setSearchFilled(true);
         setTriggerExitResults(false);
+
         if (!event.target.value) {
             setSearchFilled(false);
             setTriggerExitResults(true);
             clearResults(action.clearResults())
         }
+
         setSearchTerm(event.target.value);
     }
 
-    // Checks Nomination Data
-    useEffect(() => {
-        console.log(nominationList)
-    }, [nominationList])
-
-
-
-    // Nominate Button Clicked
-    const handleNominate = (index, movieTitle, movieYear) => {
-        console.log(index)
-
-        setTriggerExitResults(true);
-
-        setTimeout(() => {
-            setSearchFilled(false);
-            clearResults(action.clearResults())
-            setSearchTerm('');
-        }, 630);
-
-        queryOmdbNomination(action.queryOmdbNomination(movieTitle, movieYear));
-    }
 
     // Search Results Display
     let searchResults = null;
@@ -100,10 +86,35 @@ const MovieSearchContainer = () => {
                     type={movie.Type}
                     index={index}
                     disable={false}
-                    handleClick={() => handleNominate(index, movie.Title, movie.Year)}
+                    handleClick={() => handleNominate(movie.Title, movie.Year)}
                 />
             });
         }
+    }
+
+
+    // Checks Nomination Data
+    useEffect(() => {
+        console.log(nominationList)
+    }, [nominationList])
+
+
+
+    // Nominate Button Clicked
+    const handleNominate = (movieTitle, movieYear) => {
+
+        // Animates results off page
+        setTriggerExitResults(true);
+
+        // Resets search and results array
+        setTimeout(() => {
+            setSearchFilled(false);
+            clearResults(action.clearResults())
+            setSearchTerm('');
+        }, 630);
+
+        // Sends nominated movie to new API call
+        queryOmdbNomination(action.queryOmdbNomination(movieTitle, movieYear));
     }
 
     return (
@@ -113,6 +124,8 @@ const MovieSearchContainer = () => {
                 searchFilled={searchFilled}
                 searchValue={searchTerm}
             />
+
+            {/* <ToggleSeries toggled={toggle}> */}
 
             {searchTerm
                 ? <h3 className="results__search-value">Results for: <span>"{searchTerm}"</span></h3>

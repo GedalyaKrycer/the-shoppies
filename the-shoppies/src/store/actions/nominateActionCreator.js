@@ -1,6 +1,21 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+// Checks if a result has been nominated already
+export const nominatedAlready = () => {
+    return {
+        type: actionTypes.NOMINATED_ALREADY
+    }
+}
+
+// // Tells reducer the nomination was canceled
+export const cancelNomination = (movieTitle) => {
+    return {
+        type: actionTypes.NOMINATION_CANCELED,
+        movieTitle: movieTitle
+    }
+}
+
 // Lets the reducer know the query to the API has started
 export const nominationQueryStarted = () => {
     return {
