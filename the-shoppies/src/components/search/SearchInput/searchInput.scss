@@ -62,7 +62,6 @@
 
     &--tray-open {
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-        // border-color: #c2c2c2;
     }
 
     &--tray-open ~ .search__magnify-icon {
@@ -124,7 +123,7 @@
 
 
 .search__filter-tray {
-    background: $secondaryLight3Color;
+    background: #eaeee4;
     padding: 14px 18px 12px;
     position: relative;
     display: flex;
@@ -141,6 +140,7 @@
 
     p {
         margin: 0 10px 0 0;
+        color: $textColor;
     }
 
 }
@@ -155,8 +155,8 @@
 .search__filter-btn {
     border: none;
     outline: 0;
-    padding: 1px 8px;
-    border-radius: 4px;
+    padding: 1px 10px;
+    border-radius: 20px;
     cursor: pointer;
     transition: 0.2s ease-in;
 

@@ -34,7 +34,7 @@ const SearchInput = (props) => {
 
                 <span style={{ opacity: props.searchFilled ? 0 : 1 }}>
 
-                    {props.seriesToggle ? "Search any title" : "Search movies titles"}
+                    {props.seriesToggle ? "Search series titles" : "Search movies titles"}
 
                 </span>
 
@@ -58,10 +58,14 @@ const SearchInput = (props) => {
                 <div className="search__btn-group">
                     <button
                         onClick={handleMovieFilterToggle}
-                        className={`search__filter-btn ${!props.seriesToggle ? "search__filter-btn--active" : "search__filter-btn--default"}`}>Movies Only</button>
+                        className={`search__filter-btn ${!props.seriesToggle ? "search__filter-btn--active" : "search__filter-btn--default"}`}>
+                        Movies
+                    </button>
                     <button
                         onClick={handleSeriesFilterToggle}
-                        className={`search__filter-btn ${props.seriesToggle ? "search__filter-btn--active" : "search__filter-btn--default"}`}>Movies & Series</button>
+                        className={`search__filter-btn ${props.seriesToggle ? "search__filter-btn--active" : "search__filter-btn--default"}`}>
+                        Series
+                    </button>
                 </div>
             </div>
         </div>
