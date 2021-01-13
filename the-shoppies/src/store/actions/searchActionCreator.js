@@ -44,7 +44,7 @@ export const searchOmdb = (searchTerm, seriesToggle) => {
         let omdbUrl = null;
 
         if (seriesToggle) {
-            omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
+            omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&type=series&apikey=${process.env.REACT_APP_OMDB_KEY}`;
         } else {
             omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&type=movie&apikey=${process.env.REACT_APP_OMDB_KEY}`;
         }
@@ -60,8 +60,8 @@ export const searchOmdb = (searchTerm, seriesToggle) => {
                     // Checks if the results list is an array
                     if (Array.isArray(resultList)) {
 
-                        // If it is more then 5 items it limits to 5
-                        resultList = resultList.length > 4 ? resultList.slice(0, 4) : resultList;
+                        // If it is more then 3 items it limits to 3
+                        resultList = resultList.length > 3 ? resultList.slice(0, 3) : resultList;
 
                         // Loop to ensure series have an end date if it is a series only
                         resultList.forEach(result => {
