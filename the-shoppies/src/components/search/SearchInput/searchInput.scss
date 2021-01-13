@@ -60,6 +60,19 @@
     border-style: solid;
     transition: 0.2s ease-in;
 
+    &--tray-open {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        // border-color: #c2c2c2;
+    }
+
+    &--tray-open ~ .search__magnify-icon {
+        fill: #c2c2c2;
+    }
+
+    &--tray-open + span {
+        color: #c2c2c2;
+    }
+
     &:focus {
         color: #000000;
         outline: 0;
@@ -112,11 +125,10 @@
 
 .search__filter-tray {
     background: $secondaryLight3Color;
-    padding: 12px 18px;
+    padding: 14px 18px 12px;
     position: relative;
     display: flex;
     z-index: 1;
-    margin: -1px;
     border-radius: 0 0 4px 4px;
     visibility: hidden;
     transition: 0.3s ease-in-out;
@@ -124,7 +136,7 @@
 
     &--active {
         visibility: visible;
-        transform: translateY(0);
+        transform: translateY(-3px);
     }
 
     p {
@@ -154,6 +166,10 @@
         background: $primaryColor;
         color: white;
         outline: 0;
+    }
+
+    &--active {
+        cursor: default;
     }
 
     &--default {
