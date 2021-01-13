@@ -124,7 +124,9 @@ const MovieSearchContainer = () => {
             />
 
             {searchTerm
-                ? <h3 className="results__search-value">Results for: <span>"{searchTerm}"</span></h3>
+                ? <h3 className="results__search-value">
+                    {searchSeries ? "Series results for: " : "Movie results for: "}
+                    <span>"{searchTerm}"</span></h3>
                 : null}
 
             {searchResults}
