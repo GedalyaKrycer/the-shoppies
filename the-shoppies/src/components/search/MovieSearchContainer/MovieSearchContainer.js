@@ -17,7 +17,7 @@ const MovieSearchContainer = () => {
     const [triggerExitResults, setTriggerExitResults] = useState(false);
 
     // Redux State Hooks
-    const searching = useSelector(state => state.search.searching)
+    const searching = useSelector(state => state.search.searching);
     const searchLoadingStatus = useSelector(state => state.search.loading)
     const searchError = useSelector(state => state.search.error)
     const apiErrorMessage = useSelector(state => state.search.errorMessage)

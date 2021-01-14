@@ -46,9 +46,7 @@ export const queryOmdbNomination = (movieTitle, movieYear) => {
         axios.get(omdbUrl)
             .then((res) => {
                 const response = res.data;
-
                 dispatch(nominationQuerySucceeded(response));
-
 
             })
             .catch((error) => {

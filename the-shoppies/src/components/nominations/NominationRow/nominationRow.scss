@@ -1,4 +1,4 @@
-.nomination-row {
+.nom-row {
     max-width: 800px;
     height: 140px;
     margin-bottom: 30px;
@@ -7,14 +7,14 @@
     transform: translateX(-134px);
 
     
-    .number {
+    .nom-row__number {
         background-color: rgb(250, 183, 171);
     }
 
-    .image {
+    .nom-row__img {
         background-color: rgb(236, 126, 106);
     }
-    .body {
+    .nom-row__body-wrapper {
         background-color: rgb(245, 78, 49);
     }
 }

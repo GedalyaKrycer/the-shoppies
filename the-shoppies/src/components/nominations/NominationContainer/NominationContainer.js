@@ -1,15 +1,33 @@
 import React from 'react';
 import './nominationContainer.scss';
 import NominationRow from '../NominationRow/NominationRow';
+import { useSelector } from "react-redux";
 
 const NominationContainer = () => {
+
+    const nominationList = useSelector(state => state.nominate.nominationList);
+    console.log(nominationList)
+
+    const removeHandler = () => {
+        console.log("Nomination removed")
+    }
+
     return (
         <section className="nom-container">
-            <div className="nom-container__col-left"></div>
-            <div className="nom-container__col-right">
-                <NominationRow />
+            {nominationList && nominationList.map((nom, index) => {
+                return <NominationRow
+                    key={nom.imdbID}
+                    movieIndex={index + 1}
+                    img={nom.Poster}
+                    title={nom.Title}
+                    imdbID={nom.imdbID}
+                    imdbRating={nom.imdbRating}
+                    mpaa={nom.Rated}
+                    genres={nom.Genre}
+                    remove={removeHandler}
+                />
+            })}
 
-            </div>
         </section>
     )
 }
