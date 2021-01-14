@@ -5,7 +5,7 @@
 
 .search {
     position: relative;
-    margin-top: 40px;
+    margin-top: 60px;
     width: 100%;
     display: block;
     z-index: 2;
@@ -15,7 +15,7 @@
 
 
     @include smMinBreakPoint {
-        margin-top: 60px;
+        margin-top: 70px;
     }
 
     &__magnify-icon {
@@ -62,6 +62,7 @@
 
     &--tray-open {
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        border-color: $primaryColor;
     }
 
     &--tray-open ~ .search__magnify-icon {
@@ -128,14 +129,15 @@
     position: relative;
     display: flex;
     z-index: 1;
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px 4px 0 0;
     visibility: hidden;
     transition: 0.3s ease-in-out;
+    margin-top: -20px;
     transform: translateY(-50px);
 
     &--active {
         visibility: visible;
-        transform: translateY(-3px);
+        transform: translateY(-88px);
     }
 
     p {
