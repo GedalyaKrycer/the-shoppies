@@ -3,12 +3,21 @@ import './nominationRow.scss';
 
 const NominationRow = (props) => {
     return (
-        <div className="nom-row">
-            <div className="nom-row__number">{props.movieIndex}</div>
+        <div className="nom-row__wrapper">
+            <div className="nom-row__number">
+                <p>
+                    {props.movieIndex}
+                </p>
+            </div>
+
             <img src={props.img} className="nom-row__img" alt={`${props.title} poster`} />
+
             <div className="nom-row__body-wrapper">
+
                 <div className="nom-row__movie-details">
-                    <h3>{props.title}</h3>
+
+                    <h3 className="nom-row__title">{props.title}</h3>
+
                     <div className="npm-row__meta-info">
                         <a
                             href={`https://www.imdb.com/title/${props.imdbID.replace(/['"]+/g, '')}`}
@@ -29,13 +38,15 @@ const NominationRow = (props) => {
                             <path d="M4.58163 0.927066C4.88098 0.00575554 6.18439 0.00575715 6.48374 0.927068L7.10428 2.8369C7.23816 3.24892 7.62211 3.52788 8.05534 3.52788H10.0635C11.0322 3.52788 11.435 4.7675 10.6512 5.3369L9.02664 6.51724C8.67615 6.77188 8.5295 7.22325 8.66337 7.63527L9.28391 9.5451C9.58326 10.4664 8.52878 11.2325 7.74507 10.6631L6.12047 9.4828C5.76998 9.22815 5.29539 9.22815 4.9449 9.4828L3.3203 10.6631C2.53659 11.2325 1.48211 10.4664 1.78146 9.5451L2.402 7.63527C2.53588 7.22325 2.38922 6.77188 2.03873 6.51724L0.414131 5.3369C-0.369583 4.7675 0.0331944 3.52788 1.00192 3.52788H3.01003C3.44326 3.52788 3.82721 3.24892 3.96109 2.8369L4.58163 0.927066Z" fill="#008060" />
                         </svg>
                         <p className="npm-row__meta-text">
-                            {`${props.imdbRating} • ${props.mpaa}`}
+                            {`${props.imdbRating}  •  ${props.mpaa}`}
                         </p>
                         <h4>{props.genres}</h4>
                     </div>
 
                 </div>
+
                 <button onClick={props.remove}>Replace with remove button</button>
+
             </div>
 
         </div>

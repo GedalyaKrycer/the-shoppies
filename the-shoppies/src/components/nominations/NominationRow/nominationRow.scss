@@ -1,20 +1,76 @@
-.nom-row {
+@import '../../../sassStyles/variables';
+
+.nom-row__wrapper {
     max-width: 800px;
-    height: 140px;
-    margin-bottom: 30px;
+    height: 110px;
+    margin-bottom: 75px;
     display: grid;
-    grid-template-columns: 81px 94px 1fr;
-    transform: translateX(-134px);
+    position: relative;
+    grid-template-columns: 78px 94px 1fr;
+    align-content: center;
+    transform: translateX(-126px);
+    border: 1px solid $primaryColor;
+    box-sizing: border-box;
 
-    
-    .nom-row__number {
-        background-color: rgb(250, 183, 171);
-    }
+}
 
-    .nom-row__img {
-        background-color: rgb(236, 126, 106);
-    }
-    .nom-row__body-wrapper {
-        background-color: rgb(245, 78, 49);
+  
+.nom-row__number {
+    display: flex;
+    justify-content: center;
+    padding-left: 3px;
+
+    p {
+        font-style: normal;
+        font-weight: 200;
+        font-size: 45px;
+        line-height: 54px;
+        text-align: center;
+        color: $primaryDarkColor;
     }
 }
+
+.nom-row__img {
+    background-color: $primaryDark2Color;
+    color: $primaryColor;
+    width: 93px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nom-row__body-wrapper {
+   padding: 20px;
+   display: grid;
+   grid-template-columns: 1fr 35px;
+   column-gap: 20px;
+}
+
+.nom-row__movie-details {
+    color: $primaryLight1Color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.npm-row__meta-info {
+    display: grid;
+    grid-template-columns: 30px 11px 1fr;
+    row-gap: 5px;
+    column-gap: 10px;
+    margin-top: 5px;
+    align-items: center;
+
+    p {
+        margin: 0;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    h4 {
+        grid-column: 1 / -1;
+        font-style: italic;
+        opacity: 0.8;
+    }
+}
+
