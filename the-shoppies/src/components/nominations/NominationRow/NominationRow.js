@@ -1,5 +1,6 @@
 import React from 'react';
 import './nominationRow.scss';
+import ButtonClose from '../../ui/ButtonClose/ButtonClose';
 
 const NominationRow = (props) => {
     return (
@@ -44,8 +45,8 @@ const NominationRow = (props) => {
                     </div>
 
                 </div>
+                <ButtonClose remove={props.remove} />
 
-                <button onClick={props.remove}>Replace with remove button</button>
 
             </div>
 

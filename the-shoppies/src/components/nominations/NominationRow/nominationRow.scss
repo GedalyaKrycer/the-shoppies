@@ -39,9 +39,10 @@
 }
 
 .nom-row__body-wrapper {
-   padding: 20px;
+   padding: 20px 30px 20px 20px;
    display: grid;
    grid-template-columns: 1fr 35px;
+   align-items: center;
    column-gap: 20px;
 }
 
