@@ -11,6 +11,12 @@ const SearchInput = (props) => {
         openOptionsMenu ? setOpenOptionsMenu(false) : setOpenOptionsMenu(true);
     }
 
+    const handleFocus = () => {
+        if (openOptionsMenu) {
+            handleOptionsMenu()
+        }
+    }
+
     const handleMovieFilterToggle = () => {
         props.handleSeriesToggle(false);
         setOpenOptionsMenu(false)
@@ -29,6 +35,7 @@ const SearchInput = (props) => {
                     type="text"
                     className={`search__input ${openOptionsMenu ? "search__input--tray-open" : null}`}
                     onChange={(event) => props.handleSearch(event)}
+                    onFocus={handleFocus}
                     value={props.searchValue}
                 />
 
@@ -54,7 +61,7 @@ const SearchInput = (props) => {
                 </button>
             </label>
             <div className={`search__filter-tray ${openOptionsMenu ? "search__filter-tray--active" : null}`}>
-                <p>search by:</p>
+                <p>search for:</p>
                 <div className="search__btn-group">
                     <button
                         onClick={handleMovieFilterToggle}
