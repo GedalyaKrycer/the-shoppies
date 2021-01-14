@@ -23,6 +23,7 @@ const MovieSearchContainer = () => {
     const apiErrorMessage = useSelector(state => state.search.errorMessage)
     const movieListArray = useSelector(state => state.search.omdbResults)
     const nominationList = useSelector(state => state.nominate.nominationList)
+    const nominationLoadingStatus = useSelector(state => state.nominate.loading)
 
     // Redux Dispatch Hooks
     const searchOmdbApi = useDispatch();
@@ -87,7 +88,7 @@ const MovieSearchContainer = () => {
     if (searching) {
 
         // ...Then a loader will show until the api returns results
-        if (searchLoadingStatus) {
+        if (searchLoadingStatus || nominationLoadingStatus) {
             searchResults = <Loader />
         } else {
             searchResults = movieListArray && movieListArray.map((movie, index) => {
