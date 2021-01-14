@@ -5,4 +5,8 @@
     grid-template-columns: 60% 1fr;
     margin: 0 auto;
     height: 100%;
+    overflow: hidden;
+
+    -webkit-animation: turn-on-overflow 0.01s ease 1s both;
+    animation: turn-on-overflow 0.01s ease 1s both;
 }

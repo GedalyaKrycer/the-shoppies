@@ -20,8 +20,6 @@ function App() {
             <Intro />
             <MovieSearchContainer />
           </ColLeft>
-          {/* <ColRight>
-          </ColRight> */}
         </BodyContainer>
         <NominationContainer />
       </div>

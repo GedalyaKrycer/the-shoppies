@@ -1,8 +1,11 @@
 @import '../../../sassStyles/variables';
+@import '../../../sassStyles/animations';
 
 .nom-container {
     background: $primaryDark1Color;
     height: 100%;
     padding: 160px 0 50px 0;
-
+    opacity: 0;
+    -webkit-animation: fade-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
+    animation: fade-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
 }
