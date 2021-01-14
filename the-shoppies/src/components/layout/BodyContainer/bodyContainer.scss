@@ -3,11 +3,12 @@
 
 .bodyContainer {
     max-width: $screen-full;
-    margin: 34px auto 0;
-    padding: 0 5%;
+    padding: 0 10%;
+    position: relative;
+    z-index: 4;
     
     @include mdMinBreakPoint {
-        margin: 64px auto 0;
+        // margin: 0 auto;
     }
 
 }

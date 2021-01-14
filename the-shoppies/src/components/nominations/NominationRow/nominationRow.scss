@@ -1,0 +1,20 @@
+.nomination-row {
+    max-width: 800px;
+    height: 140px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 81px 94px 1fr;
+    transform: translateX(-134px);
+
+    
+    .number {
+        background-color: rgb(250, 183, 171);
+    }
+
+    .image {
+        background-color: rgb(236, 126, 106);
+    }
+    .body {
+        background-color: rgb(245, 78, 49);
+    }
+}

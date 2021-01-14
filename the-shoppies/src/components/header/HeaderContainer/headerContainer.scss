@@ -2,12 +2,11 @@
 @import '../../../sassStyles/variables';
 
 header {
-    padding: 0 5%;
-    margin: 20px auto 0;
+    margin: 20px auto 34px;
     max-width: $screen-full;
 
     @include xxlMinBreakPoint {
-        margin: 40px auto 0;
+        margin: 40px 0 64px;
     }
 
    

@@ -49,6 +49,7 @@ const MovieSearchContainer = () => {
 
     // Logs search input and turns on/off label
     const handleSearch = (event) => {
+
         setSearchFilled(true);
         setTriggerExitResults(false);
 
