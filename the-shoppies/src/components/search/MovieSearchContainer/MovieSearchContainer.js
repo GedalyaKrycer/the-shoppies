@@ -7,6 +7,7 @@ import useDebounce from '../../../utilities/debounceHook';
 import * as action from '../../../store/actions/index';
 import MovieSearchMetaInfo from '../MetaDetailsMovieSearch/MetaDetailsMovieSearch';
 import SearchErrorMessage from '../SearchErrorMessage/SearchErrorMessage';
+import MovieSearchConfirmation from '../MovieSearchConfirmation/MovieSearchConfirmation';
 
 const MovieSearchContainer = () => {
 
@@ -130,6 +131,8 @@ const MovieSearchContainer = () => {
             {searchError
                 ? <SearchErrorMessage error={apiErrorMessage} />
                 : null}
+
+            <MovieSearchConfirmation />
         </section>
     )
 }

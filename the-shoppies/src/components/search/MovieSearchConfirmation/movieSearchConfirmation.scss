@@ -1,0 +1,23 @@
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/mixins';
+
+.nomConfirm {
+    background-color: $secondaryLight4Color;
+    text-align: center;
+    padding: 35px;
+
+    @include customMinBreakPoint(400) {
+        padding: 65px;
+    }
+
+    h2 {
+        color: $primaryDark1Color;
+        margin: 0;
+    }
+
+    p {
+        color: $textColor;
+        margin: 15px auto 25px;
+        max-width: 280px;
+    }
+}
