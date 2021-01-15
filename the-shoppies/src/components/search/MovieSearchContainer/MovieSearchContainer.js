@@ -25,6 +25,7 @@ const MovieSearchContainer = () => {
     const movieListArray = useSelector(state => state.search.omdbResults)
     const nominationList = useSelector(state => state.nominate.nominationList)
     const nominationLoadingStatus = useSelector(state => state.nominate.loading)
+    const nominationsCompleted = useSelector(state => state.nominate.nominationsCompleted)
 
     // Redux Dispatch Hooks
     const searchOmdbApi = useDispatch();
@@ -128,11 +129,13 @@ const MovieSearchContainer = () => {
                 : null}
 
             {searchResults}
+
             {searchError
                 ? <SearchErrorMessage error={apiErrorMessage} />
                 : null}
 
-            <MovieSearchConfirmation />
+            {nominationsCompleted ? <MovieSearchConfirmation /> : null}
+
         </section>
     )
 }
