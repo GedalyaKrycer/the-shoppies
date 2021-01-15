@@ -74,6 +74,17 @@
     margin-top: 5px;
     align-items: center;
 
+    a {
+        transition: ease-in-out 0.3s;
+        -webkit-animation: jello-horizontal 0.9s 0.5s both;
+	        animation: jello-horizontal 0.9s 0.5s both;
+    }
+
+    a:hover {
+        opacity: .3;
+        
+    }
+
     p {
         margin: 0;
         font-weight: 600;
