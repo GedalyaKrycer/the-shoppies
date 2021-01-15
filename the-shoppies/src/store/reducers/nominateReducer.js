@@ -45,8 +45,11 @@ const reducer = (state = initialState, action) => {
                 nominationList: updatedList,
                 nominationsCompleted: false
             });
+        case actionTypes.NOMINATIONS_STORED:
+            return updateObject(state, {
+                nominationList: action.localStorageList
+            });
         case actionTypes.NOMINATIONS_COMPLETED:
-
             return updateObject(state, {
                 nominationsCompleted: true
             });

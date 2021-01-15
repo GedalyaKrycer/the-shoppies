@@ -7,19 +7,40 @@ import NominationCounter from '../NominationCounter/NominationCounter';
 
 const NominationContainer = () => {
 
-    // Redux States Hoks
+    // Redux States Hooks
     const nominationList = useSelector(state => state.nominate.nominationList);
 
     // Redux Dispatch Hooks
     const setNominationsCompleted = useDispatch();
     const cancelNomination = useDispatch();
+    const setNominationList = useDispatch();
 
+    // Checks when the list reaches 5
     useEffect(() => {
         if (nominationList.length === 5) {
             setNominationsCompleted(action.setNominationsCompleted(true));
         }
     }, [nominationList, setNominationsCompleted])
 
+
+    // Pulls Nomination List from local storage
+    useEffect(() => {
+
+        const localData = localStorage.getItem('nominationList');
+
+        if (localData) {
+            setNominationList(action.storeAllNominations(JSON.parse(localData)));
+            console.log("Local Data Stored in Redux");
+        }
+
+    }, [setNominationList])
+
+
+    // Saves resultsArray to local storage
+    useEffect(() => {
+        localStorage.setItem('nominationList', JSON.stringify(nominationList));
+
+    }, [nominationList])
 
     console.log(nominationList)
 
