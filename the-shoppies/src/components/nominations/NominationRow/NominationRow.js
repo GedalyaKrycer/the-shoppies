@@ -8,7 +8,9 @@ const NominationRow = (props) => {
     const imgRender = props.img === "N/A" ? imagePlaceholder : props.img;
 
     return (
-        <div className="nom-row__wrapper">
+        <div className={`nom-row__wrapper ${props.delayNominationAnimation ? "nom-row__wrapper--delay" : null}`}
+            style={{ "--delay": props.delay }}
+        >
             <div className="nom-row__number">
                 <p>
                     {props.movieIndex}

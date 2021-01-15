@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './nominationContainer.scss';
 import { useSelector, useDispatch } from "react-redux";
 import * as action from '../../../store/actions/index';
@@ -7,6 +7,8 @@ import NominationCounter from '../NominationCounter/NominationCounter';
 
 const NominationContainer = () => {
 
+    const [delayNominationAnimation, setDelayNominationAnimation] = useState(false)
+
     // Redux States Hooks
     const nominationList = useSelector(state => state.nominate.nominationList);
 
@@ -14,6 +16,12 @@ const NominationContainer = () => {
     const setNominationsCompleted = useDispatch();
     const cancelNomination = useDispatch();
     const setNominationList = useDispatch();
+
+    //
+    useEffect(() => {
+        setDelayNominationAnimation(true);
+        setTimeout(() => setDelayNominationAnimation(false), 1000);
+    }, [])
 
     // Checks when the list reaches 5
     useEffect(() => {
@@ -51,7 +59,9 @@ const NominationContainer = () => {
     }
 
     return (
-        <section className="nom-container">
+        <section
+            className="nom-container"
+        >
             <div className="nom-container__counter-wrapper">
                 <NominationCounter
                     nominationList={nominationList}
@@ -68,6 +78,8 @@ const NominationContainer = () => {
                     imdbRating={nom.imdbRating}
                     mpaa={nom.Rated}
                     genres={nom.Genre}
+                    delay={index}
+                    delayNominationAnimation={delayNominationAnimation}
                     remove={() => removeHandler(nom.Title)}
                 />
             })}
