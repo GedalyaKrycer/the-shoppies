@@ -1,8 +1,12 @@
 import React from 'react';
 import './nominationRow.scss';
 import ButtonClose from '../../ui/ButtonClose/ButtonClose';
+import imagePlaceholder from './movie-placeholder.jpg'
 
 const NominationRow = (props) => {
+
+    const imgRender = props.img == "N/A" ? imagePlaceholder : props.img;
+
     return (
         <div className="nom-row__wrapper">
             <div className="nom-row__number">
@@ -11,7 +15,7 @@ const NominationRow = (props) => {
                 </p>
             </div>
 
-            <img src={props.img} className="nom-row__img" alt={`${props.title} poster`} />
+            <img src={imgRender} className="nom-row__img" alt={`${props.title} poster`} />
 
             <div className="nom-row__body-wrapper">
 
