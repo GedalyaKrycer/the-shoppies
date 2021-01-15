@@ -27,6 +27,7 @@ const NominationContainer = () => {
 
     return (
         <section className="nom-container">
+            <p>Nominated: <span>{nominationList.length}/5</span></p>
             {nominationList && nominationList.map((nom, index) => {
                 return <NominationRow
                     key={nom.imdbID}
