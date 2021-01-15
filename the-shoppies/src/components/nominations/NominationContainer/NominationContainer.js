@@ -12,6 +12,7 @@ const NominationContainer = () => {
 
     // Redux Dispatch Hooks
     const setNominationsCompleted = useDispatch();
+    const cancelNomination = useDispatch();
 
     useEffect(() => {
         if (nominationList.length === 5) {
@@ -22,8 +23,10 @@ const NominationContainer = () => {
 
     console.log(nominationList)
 
-    const removeHandler = () => {
+    const removeHandler = (title) => {
         console.log("Nomination removed")
+        console.log(title)
+        cancelNomination(action.cancelNomination(title));
     }
 
     return (
@@ -44,7 +47,7 @@ const NominationContainer = () => {
                     imdbRating={nom.imdbRating}
                     mpaa={nom.Rated}
                     genres={nom.Genre}
-                    remove={removeHandler}
+                    remove={() => removeHandler(nom.Title)}
                 />
             })}
 

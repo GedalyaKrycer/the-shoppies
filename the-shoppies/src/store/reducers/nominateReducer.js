@@ -40,7 +40,7 @@ const reducer = (state = initialState, action) => {
                 errorMessage: action.error
             });
         case actionTypes.NOMINATION_CANCELED:
-            const updatedList = state.nominationList.filter(movieTitle => movieTitle !== action.movieTitle);
+            const updatedList = state.nominationList.filter(movieTitle => movieTitle.Title !== action.movieTitle);
             return updateObject(state, {
                 nominationList: updatedList,
                 nominationsCompleted: false
