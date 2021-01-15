@@ -7,6 +7,7 @@ import NominationCounter from '../NominationCounter/NominationCounter';
 
 const NominationContainer = () => {
 
+    // Local State 
     const [delayNominationAnimation, setDelayNominationAnimation] = useState(false)
 
     // Redux States Hooks
@@ -17,7 +18,8 @@ const NominationContainer = () => {
     const cancelNomination = useDispatch();
     const setNominationList = useDispatch();
 
-    //
+    // Delays nomination entrance animations on first load. 
+    // Removes delay 1 second after page loads 
     useEffect(() => {
         setDelayNominationAnimation(true);
         setTimeout(() => setDelayNominationAnimation(false), 1000);
@@ -53,9 +55,8 @@ const NominationContainer = () => {
     console.log(nominationList)
 
     const removeHandler = (title) => {
-        console.log("Nomination removed")
-        console.log(title)
-        cancelNomination(action.cancelNomination(title));
+        setTimeout(() => cancelNomination(action.cancelNomination(title)), 1000);
+
     }
 
     return (
@@ -79,8 +80,8 @@ const NominationContainer = () => {
                     mpaa={nom.Rated}
                     genres={nom.Genre}
                     delay={index}
-                    delayNominationAnimation={delayNominationAnimation}
                     remove={() => removeHandler(nom.Title)}
+                    delayNominationAnimation={delayNominationAnimation}
                 />
             })}
 

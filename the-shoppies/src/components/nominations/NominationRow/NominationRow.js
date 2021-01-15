@@ -7,8 +7,20 @@ const NominationRow = (props) => {
 
     const imgRender = props.img === "N/A" ? imagePlaceholder : props.img;
 
+    let updatedGeneres = null;
+    let propsArray = props.genres.split(" ");
+
+    // Shortens generes to 3 items 
+    if (propsArray.length > 3) {
+        updatedGeneres = propsArray.splice(0, 3).join(" ").slice(0, -1);
+    } else {
+        updatedGeneres = props.genres;
+    }
+
+
     return (
-        <div className={`nom-row__wrapper ${props.delayNominationAnimation ? "nom-row__wrapper--delay" : null}`}
+        <div className={`nom-row__wrapper 
+        ${props.delayNominationAnimation ? "nom-row__wrapper--delay" : null}`}
             style={{ "--delay": props.delay }}
         >
             <div className="nom-row__number">
@@ -47,7 +59,7 @@ const NominationRow = (props) => {
                         <p className="npm-row__meta-text">
                             {`${props.imdbRating}  •  ${props.mpaa}`}
                         </p>
-                        <h4>{props.genres}</h4>
+                        <h4>{updatedGeneres}</h4>
                     </div>
 
                 </div>

@@ -15,11 +15,10 @@
 
     -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    
-    &--delay {
 
-        -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) calc(0.25s * var(--delay)) both;
-        animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) calc(0.25s * var(--delay)) both;
+    &--delay {
+        -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) calc(0.35s * var(--delay)) both;
+        animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) calc(0.35s * var(--delay)) both;
     }
 
 
