@@ -111,7 +111,7 @@ const MovieSearchContainer = () => {
     }
 
     return (
-        <section>
+        <section className="search-container">
             <SearchInput
                 handleSearch={handleSearch}
                 searchFilled={searchFilled}
