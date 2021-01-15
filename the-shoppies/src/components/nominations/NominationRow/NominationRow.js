@@ -5,7 +5,7 @@ import imagePlaceholder from './movie-placeholder.jpg'
 
 const NominationRow = (props) => {
 
-    const imgRender = props.img == "N/A" ? imagePlaceholder : props.img;
+    const imgRender = props.img === "N/A" ? imagePlaceholder : props.img;
 
     return (
         <div className="nom-row__wrapper">

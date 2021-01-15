@@ -4,5 +4,6 @@ export {
 } from './searchActionCreator';
 
 export {
-    queryOmdbNomination
+    queryOmdbNomination,
+    setNominationsCompleted
 } from './nominateActionCreator';

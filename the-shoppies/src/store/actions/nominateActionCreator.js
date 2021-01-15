@@ -1,7 +1,15 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
-// // Tells reducer the nomination was canceled
+// Tells reducer the nomination was canceled
+export const setNominationsCompleted = () => {
+    console.log("Five Nominations Hit!")
+    return {
+        type: actionTypes.NOMINATIONS_COMPLETED
+    }
+}
+
+// Tells reducer all 5 nominations have been selected
 export const cancelNomination = (movieTitle) => {
     return {
         type: actionTypes.NOMINATION_CANCELED,

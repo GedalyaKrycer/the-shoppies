@@ -5,7 +5,8 @@ const initialState = {
     loading: false,
     error: false,
     errorMessage: '',
-    nominationList: []
+    nominationList: [],
+    nominationsCompleted: false
 };
 
 
@@ -41,7 +42,13 @@ const reducer = (state = initialState, action) => {
         case actionTypes.NOMINATION_CANCELED:
             const updatedList = state.nominationList.filter(movieTitle => movieTitle !== action.movieTitle);
             return updateObject(state, {
-                nominationList: updatedList
+                nominationList: updatedList,
+                nominationsCompleted: false
+            });
+        case actionTypes.NOMINATIONS_COMPLETED:
+
+            return updateObject(state, {
+                nominationsCompleted: true
             });
         default: return state;
     };
