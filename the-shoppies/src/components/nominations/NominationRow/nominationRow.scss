@@ -3,17 +3,29 @@
 
 .nom-row__wrapper {
     max-width: 800px;
-    height: 110px;
-    margin-bottom: 75px;
+    margin: 0 auto 20px;
     display: grid;
     position: relative;
-    right: 126px;
-    margin-right: -76px;
-    grid-template-columns: 78px 94px 1fr;
+    grid-template-columns: 61px 1fr;
+    column-gap: 15px;
     align-content: center;
     border: 1px solid $primaryColor;
     box-sizing: border-box;
     opacity: 0;
+    padding: 15px;
+
+    @include customMinBreakPoint(650) {
+        grid-template-columns: 40px 61px 1fr;
+    }
+
+    @include customMinBreakPoint(1024) {
+        right: 126px;
+        margin: 0 -76px 75px 0;
+        padding: 0;
+        height: 110px;
+        grid-template-columns: 78px 94px 1fr;
+        column-gap: 0;
+    }
 
     &--active {
         -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -30,32 +42,46 @@
 
   
 .nom-row__number {
-    display: flex;
+    display: none;
     justify-content: center;
     padding-left: 3px;
+
+    @include customMinBreakPoint(650) {
+        color: $primaryDarkColor;
+        display: flex;
+    }
    
     p {
+        color: $primaryLight1Color;
         font-style: normal;
         font-weight: 200;
         font-size: 45px;
         line-height: 54px;
         text-align: center;
-        color: $primaryDarkColor;
+        display: flex;
+        align-items: center;
         opacity: 0;
         -webkit-animation: fade-in-right 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) .35s both;
                 animation: fade-in-right 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) .35s both;
     
+        @include customMinBreakPoint(1024) {
+            color: $primaryDarkColor;
+        }
     }
 }
 
 .nom-row__img {
     background-color: $primaryDark2Color;
     color: $primaryColor;
-    width: 93px;
+    width: 61px;
     border-radius: 8px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
     align-self: center;
     opacity: 0;
+
+    @include customMinBreakPoint(1024) {
+        width: 93px;
+    }
 
     &--active {
         -webkit-animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) .1s both;
@@ -69,11 +95,21 @@
 }
 
 .nom-row__body-wrapper {
-   padding: 20px 30px 20px 20px;
+   padding: 0;
+   position: relative;
    display: grid;
-   grid-template-columns: 1fr 35px;
+   grid-template-columns: 1fr;
    align-items: center;
    column-gap: 20px;
+
+   @include customMinBreakPoint(600) {
+        grid-template-columns: 1fr 35px;
+        padding-right: 10px;
+    }
+
+   @include customMinBreakPoint(1024) {
+        padding: 20px 30px 20px 20px;
+    }
 }
 
 .nom-row__movie-details {
@@ -83,11 +119,37 @@
     justify-content: center;
 
     h3 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        max-width: 130px;
     }
 
+
+    @include customMinBreakPoint(370) {
+        h3 {
+            max-width: 180px;
+        }
+    }
+
+
+    @include customMinBreakPoint(420) {
+        h3 {
+            max-width: 225px;
+        }
+    }
+
+    @include customMinBreakPoint(520) {
+        h3 {
+            max-width: 335px;
+        }
+    }
+
+    @include customMinBreakPoint(600) {
+        h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 400px;
+        }
+    }
 
     @include customMinBreakPoint(1024) {
         h3 {
@@ -158,3 +220,14 @@
     }
 }
 
+.buttonCloseContainer {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include customMinBreakPoint(600) {
+        position: static;
+        display: block;
+    }
+}

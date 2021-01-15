@@ -35,7 +35,6 @@ const NominationRow = (props) => {
                 alt={`${props.title} poster`} />
 
             <div className="nom-row__body-wrapper">
-
                 <div className="nom-row__movie-details">
 
                     <h3 className="nom-row__title">{props.title}</h3>
@@ -66,7 +65,9 @@ const NominationRow = (props) => {
                     </div>
 
                 </div>
-                <ButtonClose remove={props.remove} />
+                <div className="buttonCloseContainer">
+                    <ButtonClose remove={props.remove} />
+                </div>
 
 
             </div>

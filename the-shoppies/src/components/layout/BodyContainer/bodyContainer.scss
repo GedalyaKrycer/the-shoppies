@@ -7,14 +7,12 @@
     margin: 0 auto;
     height: 100%;
     overflow: hidden;
-    padding: 0 5%;
     -webkit-animation: turn-on-overflow 0.1s ease 1.5s both;
     animation: turn-on-overflow 0.1s ease 1.5s both;
 
     @include customMinBreakPoint(1024) {
         grid-template-columns: 60% 1fr;
         padding-left: 5%;
-        padding-right: 0;
     }
 
     @include xlMinBreakPoint {

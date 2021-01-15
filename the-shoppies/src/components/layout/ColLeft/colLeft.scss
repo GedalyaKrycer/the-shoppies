@@ -1,10 +1,11 @@
 @import '../../../sassStyles/mixins';
 
 .colLeft {
-
+    padding: 0 5%;
     @include customMinBreakPoint(1024) {
         max-width: 410px;
         grid-template-columns: 1fr;
+        padding: 0;
     }
 
 

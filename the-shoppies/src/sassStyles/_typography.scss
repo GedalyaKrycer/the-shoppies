@@ -22,9 +22,13 @@ h2 {
 h3 {
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 125%;
     margin: 0;
+
+    @include customMinBreakPoint(400) {
+        font-size: 18px;
+    }
 }
 
 h4 {
