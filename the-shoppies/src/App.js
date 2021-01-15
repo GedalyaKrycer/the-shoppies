@@ -5,22 +5,19 @@ import ColLeft from './components/layout/ColLeft/ColLeft';
 import Intro from './components/ui/Intro/Intro';
 import MovieSearchContainer from './components/search/MovieSearchContainer/MovieSearchContainer';
 import NominationContainer from './components/nominations/NominationContainer/NominationContainer';
-import './app.scss'
 
 
 function App() {
   return (
     <>
-      <div className="split">
-        <BodyContainer>
+      <BodyContainer>
+        <ColLeft>
           <HeaderContainer />
-          <ColLeft>
-            <Intro />
-            <MovieSearchContainer />
-          </ColLeft>
-        </BodyContainer>
+          <Intro />
+          <MovieSearchContainer />
+        </ColLeft>
         <NominationContainer />
-      </div>
+      </BodyContainer>
     </>
 
   );

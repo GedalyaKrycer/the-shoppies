@@ -5,7 +5,7 @@ header {
     margin: 20px auto 34px;
     max-width: $screen-full;
 
-    @include xxlMinBreakPoint {
+    @include customMinBreakPoint(1024) {
         margin: 40px 0 64px;
     }
 

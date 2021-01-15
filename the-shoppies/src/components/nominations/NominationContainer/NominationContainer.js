@@ -22,7 +22,10 @@ const NominationContainer = () => {
     // Removes delay 1 second after page loads 
     useEffect(() => {
         setDelayNominationAnimation(true);
-        setTimeout(() => setDelayNominationAnimation(false), 1000);
+        setTimeout(() => {
+            console.log("Timeout for animations")
+            setDelayNominationAnimation(false)
+        }, 2500);
     }, [])
 
     // Checks when the list reaches 5
@@ -55,7 +58,7 @@ const NominationContainer = () => {
     console.log(nominationList)
 
     const removeHandler = (title) => {
-        setTimeout(() => cancelNomination(action.cancelNomination(title)), 1000);
+        cancelNomination(action.cancelNomination(title))
 
     }
 

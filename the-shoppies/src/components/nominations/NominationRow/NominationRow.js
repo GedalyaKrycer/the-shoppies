@@ -20,7 +20,7 @@ const NominationRow = (props) => {
 
     return (
         <div className={`nom-row__wrapper 
-        ${props.delayNominationAnimation ? "nom-row__wrapper--delay" : null}`}
+        ${props.delayNominationAnimation ? "nom-row__wrapper--delay" : "nom-row__wrapper--active"}`}
             style={{ "--delay": props.delay }}
         >
             <div className="nom-row__number">
@@ -29,7 +29,10 @@ const NominationRow = (props) => {
                 </p>
             </div>
 
-            <img src={imgRender} className="nom-row__img" alt={`${props.title} poster`} />
+            <img
+                src={imgRender}
+                className={`nom-row__img ${props.delayNominationAnimation ? "nom-row__img--delay" : "nom-row__img--active"}`}
+                alt={`${props.title} poster`} />
 
             <div className="nom-row__body-wrapper">
 
@@ -39,8 +42,8 @@ const NominationRow = (props) => {
 
                     <div className="npm-row__meta-info">
                         <a
-                            href={`https://www.imdb.com/title/${props.imdbID.replace(/['"]+/g, '')}`}
                             className="nom-row__imdb-link"
+                            href={`https://www.imdb.com/title/${props.imdbID.replace(/['"]+/g, '')}`}
                             target="_blank"
                             rel="noreferrer noopener"
                         >

@@ -1,10 +1,11 @@
 @import '../../../sassStyles/variables';
 @import '../../../sassStyles/animations';
+@import '../../../sassStyles/mixins';
 
 .nom-container {
     background: $primaryDark1Color;
     height: 100%;
-    padding: 30px 0 50px 0;
+    padding: 26px 0 50px 0;
     opacity: 0;
     -webkit-animation: fade-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
     animation: fade-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
@@ -12,11 +13,21 @@
     &__counter-wrapper {
         display: flex;
         justify-content: flex-end;  
-        padding-right: 15%;
+        margin-right: 50px;
         margin-bottom: 75px;
         opacity: 0;
 
         -webkit-animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.25s both;
         animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.25s both;
+
+        @include customMinBreakPoint(1400) {
+            margin-right: 12%;
+        }
+
+        @include customMinBreakPoint(1500) {
+            margin-right: 15%;
+        }
+
+   
     }
 }

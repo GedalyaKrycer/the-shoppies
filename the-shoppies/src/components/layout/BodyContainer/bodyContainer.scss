@@ -2,13 +2,28 @@
 @import '../../../sassStyles/variables';
 
 .bodyContainer {
-    max-width: $screen-full;
-    padding: 0 10%;
-    position: relative;
-    z-index: 4;
-    
-    @include mdMinBreakPoint {
-        // margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 5%;
+    -webkit-animation: turn-on-overflow 0.1s ease 1.5s both;
+    animation: turn-on-overflow 0.1s ease 1.5s both;
+
+    @include customMinBreakPoint(1024) {
+        grid-template-columns: 60% 1fr;
     }
 
+    @include xlMinBreakPoint {
+        grid-template-columns: 54% 1fr;
+    }
+
+    @include xxlMinBreakPoint {
+        grid-template-columns: 50% 1fr;
+    }
+
+    @include customMinBreakPoint(1400) {
+        grid-template-columns: 45% 1fr;
+    }
 }
