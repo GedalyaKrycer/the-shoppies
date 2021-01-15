@@ -37,7 +37,10 @@ const NominationRow = (props) => {
             <div className="nom-row__body-wrapper">
                 <div className="nom-row__movie-details">
 
-                    <h3 className="nom-row__title">{props.title}</h3>
+                    <h3
+                        title={props.title}
+                        className="nom-row__title"
+                    >{props.title}</h3>
 
                     <div className="npm-row__meta-info">
                         <a
