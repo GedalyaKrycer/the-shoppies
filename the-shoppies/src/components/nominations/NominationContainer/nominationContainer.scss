@@ -4,8 +4,19 @@
 .nom-container {
     background: $primaryDark1Color;
     height: 100%;
-    padding: 160px 0 50px 0;
+    padding: 30px 0 50px 0;
     opacity: 0;
     -webkit-animation: fade-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
     animation: fade-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
+
+    &__counter-wrapper {
+        display: flex;
+        justify-content: flex-end;  
+        padding-right: 15%;
+        margin-bottom: 90px;
+        opacity: 0;
+
+        -webkit-animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.25s both;
+        animation: fade-up 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.25s both;
+    }
 }

@@ -3,6 +3,7 @@ import './nominationContainer.scss';
 import { useSelector, useDispatch } from "react-redux";
 import * as action from '../../../store/actions/index';
 import NominationRow from '../NominationRow/NominationRow';
+import NominationCounter from '../NominationCounter/NominationCounter';
 
 const NominationContainer = () => {
 
@@ -27,7 +28,12 @@ const NominationContainer = () => {
 
     return (
         <section className="nom-container">
-            <p>Nominated: <span>{nominationList.length}/5</span></p>
+            <div className="nom-container__counter-wrapper">
+                <NominationCounter
+                    nominationList={nominationList}
+                />
+            </div>
+
             {nominationList && nominationList.map((nom, index) => {
                 return <NominationRow
                     key={nom.imdbID}
