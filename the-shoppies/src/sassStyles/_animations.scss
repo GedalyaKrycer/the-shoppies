@@ -466,3 +466,166 @@
     }
   }
   
+
+//   Crown Bottom Left Entrance Animation
+  @-webkit-keyframes crown-bottom-left {
+    0% {
+      left: 20px;
+      bottom: 0;
+      opacity: 0;
+    }
+    100% {
+        left: 0;
+        bottom: 0;
+        opacity: 1;
+    }
+  }
+  @keyframes crown-bottom-left {
+    0% {
+      left: 20px;
+      bottom: 0;
+      opacity: 0;
+    }
+    100% {
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+  
+
+//   Crown Left Entrance Animation
+  @-webkit-keyframes crown-left {
+    0% {
+        left: 39px;
+        right: 0;
+        top: 44px;
+        transform: rotate(-115deg);
+      opacity: 0;
+    }
+    100% {
+        left: 29px;
+        right: 0;
+        top: 44px;
+        transform: rotate(-135deg);
+        opacity: 1;
+    }
+  }
+  @keyframes crown-left {
+    0% {
+      left: 39px;
+      right: 0;
+      top: 44px;
+      transform: rotate(-115deg);
+      opacity: 0;
+    }
+    100% {
+      left: 29px;
+      right: 0;
+      top: 44px;
+      transform: rotate(-135deg);
+      opacity: 1;
+    }
+  }
+  
+  
+
+//   Crown Center Entrance Animation
+  @-webkit-keyframes crown-center {
+    0% {
+        top: 32px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-54%, -50%) rotate(90deg);
+        opacity: 0;
+    }
+    100% {
+        top: 22px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-54%, -50%) rotate(90deg);
+        opacity: 1;
+    }
+  }
+  @keyframes crown-center {
+    0% {
+        top: 32px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-54%, -50%) rotate(90deg);
+        opacity: 0;
+    }
+    100% {
+        top: 22px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-54%, -50%) rotate(90deg);
+        opacity: 1;
+    }
+  }
+  
+  
+  
+
+//   Crown Right Entrance Animation
+  @-webkit-keyframes crown-right {
+    0% {
+        left: 19px;
+        right: 0;
+        top: 45px;
+        transform: rotate(115deg);
+        opacity: 0;
+    }
+    100% {
+        left: 29px;
+        right: 0;
+        top: 45px;
+        transform: rotate(135deg);
+        opacity: 1;
+    }
+  }
+  @keyframes crown-right {
+    0% {
+        left: 19px;
+        right: 0;
+        top: 45px;
+        transform: rotate(115deg);
+        opacity: 0;
+    }
+    100% {
+        left: 29px;
+        right: 0;
+        top: 45px;
+        transform: rotate(135deg);
+        opacity: 1;
+    }
+  }
+  
+
+
+  //   Crown Bottom Right Entrance Animation
+  @-webkit-keyframes crown-bottom-right {
+    0% {
+      right: 20px;
+      bottom: 0;
+      opacity: 0;
+    }
+    100% {
+        right: 0;
+        bottom: 0;
+        opacity: 1;
+    }
+  }
+  @keyframes crown-bottom-right {
+    0% {
+      right: 20px;
+      bottom: 0;
+      opacity: 0;
+    }
+    100% {
+      right: 0;
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+  
