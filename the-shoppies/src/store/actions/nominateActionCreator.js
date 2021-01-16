@@ -2,6 +2,13 @@ import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
 // Manually Stores all Nominations for Local Storage
+export const clearAllNominations = () => {
+    return {
+        type: actionTypes.NOMINATIONS_CLEARED
+    }
+}
+
+// Manually Stores all Nominations for Local Storage
 export const storeAllNominations = (localStorageList) => {
     return {
         type: actionTypes.NOMINATIONS_STORED,

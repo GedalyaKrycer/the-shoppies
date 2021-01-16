@@ -1,6 +1,7 @@
 import React from 'react';
 import './sassStyles/_global.scss';
 import './sassStyles/_typography.scss';
+import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -26,7 +27,9 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')

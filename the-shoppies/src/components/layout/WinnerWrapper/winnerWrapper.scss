@@ -1,7 +1,7 @@
 @import '../../../sassStyles/mixins';
 @import '../../../sassStyles/variables';
 
-.fullScreenWrapper {
+.winnerWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
 }
 
 
-.fsw__inner-container {
+.ww__inner-container {
     background-color: $primaryDark1Color;
     width: 90%;
     height: 90%;

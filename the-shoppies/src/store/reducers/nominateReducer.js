@@ -53,6 +53,11 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, {
                 nominationsCompleted: true
             });
+        case actionTypes.NOMINATIONS_CLEARED:
+            return updateObject(state, {
+                nominationsCompleted: false,
+                nominationList: []
+            });
         default: return state;
     };
 };

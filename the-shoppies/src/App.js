@@ -1,26 +1,15 @@
 import React from 'react';
-import HeaderContainer from './components/header/HeaderContainer/HeaderContainer';
-import BodyWrapper from './components/layout/BodyWrapper/BodyWrapper';
-import ColLeftWrapper from './components/layout/ColLeftWrapper/ColLeftWrapper';
-import FullScreenWrapper from './components/layout/FullScreenWrapper/FullScreenWrapper';
-import Intro from './components/ui/Intro/Intro';
-import MovieSearchContainer from './components/search/MovieSearchContainer/MovieSearchContainer';
-import NominationContainer from './components/nominations/NominationContainer/NominationContainer';
-
+import { Route, Switch } from 'react-router-dom';
+import HomeWrapper from './components/layout/HomeWrapper/HomeWrapper';
+import WinnerWrapper from './components/layout/WinnerWrapper/WinnerWrapper';
 
 function App() {
   return (
     <>
-      {/* <BodyWrapper>
-        <ColLeftWrapper>
-          <HeaderContainer />
-          <Intro />
-          <MovieSearchContainer />
-        </ColLeftWrapper>
-        <NominationContainer />
-      </BodyWrapper> */}
-      <FullScreenWrapper>
-      </FullScreenWrapper>
+      <Switch>
+        <Route path="/" exact component={HomeWrapper} />
+        <Route path="/winner" component={WinnerWrapper} />
+      </Switch>
     </>
 
   );
