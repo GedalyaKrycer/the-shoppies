@@ -1,7 +1,7 @@
 import React from 'react';
-import './colLeft.scss';
+import './colLeftWrapper.scss';
 
-const ColLeft = (props) => {
+const ColLeftWrapper = (props) => {
     return (
         <div className="colLeft">
             {props.children}
@@ -9,4 +9,4 @@ const ColLeft = (props) => {
     )
 }
 
-export default ColLeft;
+export default ColLeftWrapper;
