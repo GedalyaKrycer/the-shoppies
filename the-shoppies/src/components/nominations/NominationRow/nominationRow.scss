@@ -47,7 +47,7 @@
     padding-left: 3px;
 
     @include customMinBreakPoint(650) {
-        color: $primaryDarkColor;
+        color: $primaryDark1Color;
         display: flex;
     }
    
@@ -65,7 +65,7 @@
                 animation: fade-in-right 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) .35s both;
     
         @include customMinBreakPoint(1024) {
-            color: $primaryDarkColor;
+            color: $primaryDark1Color;
         }
     }
 }

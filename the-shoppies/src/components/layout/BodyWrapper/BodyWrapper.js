@@ -3,9 +3,9 @@ import './bodyWrapper.scss';
 
 const BodyWrapper = (props) => {
     return (
-        <div className="bodyWrapper">
+        <main className="bodyWrapper">
             {props.children}
-        </div>
+        </main>
     )
 }
 
