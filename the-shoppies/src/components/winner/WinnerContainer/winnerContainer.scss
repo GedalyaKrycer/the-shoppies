@@ -4,13 +4,66 @@
 
 .winnerContainer {
     max-width: 830px;
+    margin: 0 auto;
 }
 
 .winnerCrown {
+    margin: 0 auto;
+    width: 90px;
+    height: 60px;
+    position: relative;
 
     &__spoke1 {
+        background-color: $primaryColor;
+        position: absolute;
         height: 3px;
         width: 20px;
+        left: 0;
+        bottom: 0;
+        transform-origin: bottom right;
+        transform: rotate(0);
+    }
+    &__spoke2 {
         background-color: $primaryColor;
+        height: 3px;
+        width: 30px;
+        position: absolute;
+        left: 29px;
+        right: 0;
+        top: 44px;
+        transform: rotate(-135deg);
+        transform-origin: bottom left;
+    }
+    &__spoke3 {
+        background-color: $primaryColor;
+        height: 3px;
+        width: 43px;
+        position: absolute;
+        top: 22px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-54%, -50%) rotate(90deg);
+        transform-origin: bottom center;
+    }
+    &__spoke4 {
+        background-color: $primaryColor;
+        height: 3px;
+        width: 30px;
+        position: absolute;
+        left: 29px;
+        right: 0;
+        top: 45px;
+        transform: rotate(135deg);
+        transform-origin: bottom right;
+    }
+    &__spoke5 {
+        background-color: $primaryColor;
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        right: 0;
+        bottom: 0;
+        transform-origin: bottom left;
+        transform: rotate(0);
     }
 }
