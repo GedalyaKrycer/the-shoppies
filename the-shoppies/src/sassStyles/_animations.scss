@@ -629,3 +629,24 @@
     }
   }
   
+
+
+  
+  // Winner Box Shadow Fade Entrance Animation
+  @-webkit-keyframes winner-box-shadow-fade {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.70);
+    }
+  }
+  @keyframes winner-box-shadow-fade {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.70);
+    }
+  }
+  

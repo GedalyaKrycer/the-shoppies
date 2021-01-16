@@ -20,8 +20,8 @@
         width: 20px;
         opacity: 0;
 
-        -webkit-animation: crown-bottom-left 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
-        animation: crown-bottom-left 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
+        -webkit-animation: crown-bottom-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        animation: crown-bottom-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
     }
 
     &__spoke2 {
@@ -32,8 +32,8 @@
         transform-origin: bottom left;
         opacity: 0;
 
-        -webkit-animation: crown-left 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
-        animation: crown-left 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
+        -webkit-animation: crown-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        animation: crown-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
     }
 
     &__spoke3 {
@@ -44,8 +44,8 @@
         transform-origin: bottom center;
         opacity: 0;
 
-        -webkit-animation: crown-center 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
-        animation: crown-center 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
+        -webkit-animation: crown-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        animation: crown-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
     }
 
     &__spoke4 {
@@ -56,8 +56,8 @@
         opacity: 0;
         transform-origin: bottom right;
 
-        -webkit-animation: crown-right 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
-        animation: crown-right 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
+        -webkit-animation: crown-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        animation: crown-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
     }
 
     &__spoke5 {
@@ -68,7 +68,7 @@
         transform-origin: bottom left;
         opacity: 0;
 
-        -webkit-animation: crown-bottom-right 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
-        animation: crown-bottom-right 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000)  both;
+        -webkit-animation: crown-bottom-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        animation: crown-bottom-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
     }
 }
