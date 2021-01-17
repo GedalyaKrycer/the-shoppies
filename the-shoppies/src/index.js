@@ -1,7 +1,7 @@
 import React from 'react';
 import './sassStyles/_global.scss';
 import './sassStyles/_typography.scss';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +10,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import searchReducer from './store/reducers/searchReducer';
 import nominateReducer from './store/reducers/nominateReducer';
+import winnerReducer from './store/reducers/winnerReducer';
 
 const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose;
 
@@ -17,6 +18,7 @@ const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDU
 const rootReducer = combineReducers({
   search: searchReducer,
   nominate: nominateReducer,
+  winner: winnerReducer
 });
 
 const store = createStore(

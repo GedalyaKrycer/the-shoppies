@@ -9,3 +9,7 @@ export {
     cancelNomination,
     storeAllNominations
 } from './nominateActionCreator';
+
+export {
+    setWinnerAuth
+} from './winnerActionCreator';

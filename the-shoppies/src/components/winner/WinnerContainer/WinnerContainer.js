@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './winnerContainer.scss';
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom';
 import * as action from '../../../store/actions/index';
 import WinnerPosterCollage from '../WinnerPosterCollage/WinnerPosterCollage';
 import ButtonPrimary from '../../ui/ButtonPrimary/ButtonPrimary';
@@ -8,14 +9,28 @@ import ButtonPrimary from '../../ui/ButtonPrimary/ButtonPrimary';
 
 const WinnerContainer = () => {
 
-    // Local State 
-    // const [delayNominationAnimation, setDelayNominationAnimation] = useState(false)
-
     // Redux States Hooks
-    // const nominationList = useSelector(state => state.nominate.nominationList);
+    const auth = useSelector(state => state.winner.winnerAuthenticated);
+
 
     // Redux Dispatch Hooks
-    // const setNominationsCompleted = useDispatch();
+    const setWinnerAuth = useDispatch();
+
+    // React Router 
+    const history = useHistory();
+
+
+    // useEffect(() => {
+    //     if (!auth) {
+    //         history.push("/");
+    //     }
+    // }, [])
+
+    const handleRevealWinner = () => {
+        console.log("Reveal Winner Clicked")
+        setWinnerAuth(action.setWinnerAuth(false));
+        history.push("/");
+    }
 
 
     return (
@@ -34,7 +49,7 @@ const WinnerContainer = () => {
                 <div className="winner__content">
                     <p className="typography__subhead">The Shoppies Winner</p>
                     <h1>Prince of Persia: The Sands of Time</h1>
-                    <ButtonPrimary>Restart</ButtonPrimary>
+                    <ButtonPrimary handleClick={handleRevealWinner}>Restart</ButtonPrimary>
                 </div>
                 <svg className="winner__shopify" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="35" cy="35" r="35" fill="#004C3F" />
