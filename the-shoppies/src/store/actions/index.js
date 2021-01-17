@@ -7,7 +7,8 @@ export {
     queryOmdbNomination,
     setNominationsCompleted,
     cancelNomination,
-    storeAllNominations
+    storeAllNominations,
+    clearAllNominations
 } from './nominateActionCreator';
 
 export {
