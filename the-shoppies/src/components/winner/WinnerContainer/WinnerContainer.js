@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './winnerContainer.scss';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
@@ -19,17 +19,22 @@ const WinnerContainer = () => {
     // React Router 
     const history = useHistory();
 
-
+    // Checks if the user has found page through nomination or it redirects to home
     useEffect(() => {
         if (!auth) {
             history.push("/");
         }
     }, [auth])
 
+
+    // Winner List Gets Populated by Local storage 
+    const winnerList = JSON.parse(localStorage.getItem('winnerList'));
+
+
+
     const handleRevealWinner = () => {
         setWinnerAuth(action.setWinnerAuth(false));
     }
-
 
     return (
         <section className="winnerContainer">
@@ -41,12 +46,14 @@ const WinnerContainer = () => {
                 <div className="winner__crown__spoke5"></div>
             </div>
 
-            <WinnerPosterCollage />
+            <WinnerPosterCollage
+                nominationList={winnerList}
+            />
 
             <div className="winner__content-container">
                 <div className="winner__content">
                     <p className="typography__subhead">The Shoppies Winner</p>
-                    <h1>Prince of Persia: The Sands of Time</h1>
+                    <h1>{winnerList[0].Title}</h1>
                     <ButtonPrimary handleClick={handleRevealWinner}>Restart</ButtonPrimary>
                 </div>
                 <svg className="winner__shopify" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -18,7 +18,6 @@ export const storeAllNominations = (localStorageList) => {
 
 // Tells reducer the nomination was canceled
 export const setNominationsCompleted = () => {
-    console.log("Five Nominations Hit!")
     return {
         type: actionTypes.NOMINATIONS_COMPLETED
     }

@@ -2,7 +2,8 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../utilities/updateObject';
 
 const initialState = {
-    winnerAuthenticated: true
+    winnerAuthenticated: true,
+    winnerList: []
 };
 
 

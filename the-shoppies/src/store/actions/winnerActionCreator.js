@@ -1,11 +1,12 @@
 import * as actionTypes from './actionTypes';
 
 
-// Manually Stores all Nominations for Local Storage
+// Authenticates that the user has nominated a winner
 export const setWinnerAuth = (authentication) => {
     return {
         type: actionTypes.WINNER_AUTH,
         auth: authentication
     }
 }
+
 

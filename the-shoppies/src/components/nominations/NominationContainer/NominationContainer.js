@@ -23,7 +23,6 @@ const NominationContainer = () => {
     useEffect(() => {
         setDelayNominationAnimation(true);
         setTimeout(() => {
-            console.log("Timeout for animations")
             setDelayNominationAnimation(false)
         }, 2500);
     }, [])
@@ -43,7 +42,6 @@ const NominationContainer = () => {
 
         if (localData) {
             setNominationList(action.storeAllNominations(JSON.parse(localData)));
-            console.log("Local Data Stored in Redux");
         }
 
     }, [setNominationList])
@@ -54,8 +52,6 @@ const NominationContainer = () => {
         localStorage.setItem('nominationList', JSON.stringify(nominationList));
 
     }, [nominationList])
-
-    console.log(nominationList)
 
     const removeHandler = (title) => {
         cancelNomination(action.cancelNomination(title))
