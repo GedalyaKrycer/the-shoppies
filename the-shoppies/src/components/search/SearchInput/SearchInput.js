@@ -52,6 +52,7 @@ const SearchInput = (props) => {
                 <button
                     onClick={handleOptionsMenu}
                     className="search__option-btn"
+                    aria-label="Search options menu toggle"
                 >
                     <svg
                         viewBox="0 0 5 16"
