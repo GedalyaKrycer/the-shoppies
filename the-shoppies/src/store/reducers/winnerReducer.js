@@ -7,12 +7,19 @@ const initialState = {
 };
 
 
+// Reducer Helper Functions
+
+const winnerAuth = (state, action) => {
+    return updateObject(state, {
+        winnerAuthenticated: action.auth
+    });
+}
+
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.WINNER_AUTH:
-            return updateObject(state, {
-                winnerAuthenticated: action.auth
-            });
+            return winnerAuth(state, action);
         default: return state;
     };
 };

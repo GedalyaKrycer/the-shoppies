@@ -10,54 +10,85 @@ const initialState = {
 };
 
 
+// Reducer Helper Functions
+
+const nominationStarted = (state, action) => {
+    return updateObject(state, {
+        loading: true
+    });
+}
+
+const nominationSuccess = (state, action) => {
+    let updatedNominationList = null;
+
+    const movieAlreadyNominated = state.nominationList.find(result => result.Title === action.omdbResult.Title)
+
+    if (movieAlreadyNominated) {
+        updatedNominationList = state.nominationList;
+    } else {
+        updatedNominationList = state.nominationList.concat(action.omdbResult)
+    }
+
+    return updateObject(state, {
+        loading: false,
+        error: false,
+        nominationList: updatedNominationList
+    });
+}
+
+const nominationFailed = (state, action) => {
+    return updateObject(state, {
+        loading: false,
+        searching: false,
+        error: true,
+        errorMessage: action.error
+    });
+}
+
+const nominationCanceled = (state, action) => {
+    const updatedList = state.nominationList.filter(movieTitle => movieTitle.Title !== action.movieTitle);
+    return updateObject(state, {
+        nominationList: updatedList,
+        nominationsCompleted: false
+    });
+}
+
+const nominationStored = (state, action) => {
+    return updateObject(state, {
+        nominationList: action.localStorageList
+    });
+}
+
+const nominationCompleted = (state, action) => {
+    return updateObject(state, {
+        nominationsCompleted: true
+    });
+}
+
+const nominationCleared = (state, action) => {
+    return updateObject(state, {
+        nominationsCompleted: false,
+        nominationList: []
+    });
+}
+
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.NOMINATED_STARTED:
-            return updateObject(state, {
-                loading: true
-            });
+            return nominationStarted(state, action);
         case actionTypes.NOMINATED_SUCCESS:
-            let updatedNominationList = null;
-
-            const movieAlreadyNominated = state.nominationList.find(result => result.Title === action.omdbResult.Title)
-
-            if (movieAlreadyNominated) {
-                updatedNominationList = state.nominationList;
-            } else {
-                updatedNominationList = state.nominationList.concat(action.omdbResult)
-            }
-
-            return updateObject(state, {
-                loading: false,
-                error: false,
-                nominationList: updatedNominationList
-            });
+            return nominationSuccess(state, action);
         case actionTypes.NOMINATED_FAILED:
-            return updateObject(state, {
-                loading: false,
-                searching: false,
-                error: true,
-                errorMessage: action.error
-            });
+            return nominationFailed(state, action);
         case actionTypes.NOMINATION_CANCELED:
-            const updatedList = state.nominationList.filter(movieTitle => movieTitle.Title !== action.movieTitle);
-            return updateObject(state, {
-                nominationList: updatedList,
-                nominationsCompleted: false
-            });
+            return nominationCanceled(state, action);
         case actionTypes.NOMINATIONS_STORED:
-            return updateObject(state, {
-                nominationList: action.localStorageList
-            });
+            return nominationStored(state, action);
         case actionTypes.NOMINATIONS_COMPLETED:
-            return updateObject(state, {
-                nominationsCompleted: true
-            });
+            return nominationCompleted(state, action);
         case actionTypes.NOMINATIONS_CLEARED:
-            return updateObject(state, {
-                nominationsCompleted: false,
-                nominationList: []
-            });
+            return nominationCleared(state, action);
         default: return state;
     };
 };
