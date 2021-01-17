@@ -2,3 +2,79 @@
 @import '../../../sassStyles/animations';
 @import '../../../sassStyles/mixins';
 
+
+.winnerPoster-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner-poster {
+    background-color: $primaryDark2Color;
+    color: $primaryColor;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    &--winner {
+        position: relative;
+        z-index: 5;
+        width: 105px;
+        opacity: 0;
+
+        -webkit-animation: scale-up 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.8s both;
+        animation: scale-up 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.8s both;
+
+        // @include customMinBreakPoint(1024) {
+        //     transform: scale(0.8);
+        // }
+    }
+
+    &--left {
+        z-index: 4;
+        position: relative;
+        width: 86px;
+        height: 128px;
+        left: 40px;
+        filter: blur(1px);
+
+        -webkit-animation: poster-left 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+        animation: poster-left 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+    }
+
+    &--left-back {
+        z-index: 3;
+        position: relative;
+        left: 80px;
+        height: 101px;
+        width: 68px;
+        filter: blur(2px);
+
+        -webkit-animation: poster-back-left 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.5s both;
+        animation: poster-back-left 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.5s both;
+    }
+
+    &--right {
+        z-index: 4;
+        position: relative;
+        width: 86px;
+        height: 128px;
+        right: 40px;
+        filter: blur(1px);
+
+        -webkit-animation: poster-right 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+        animation: poster-right 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+    }
+
+    &--right-back {
+        z-index: 3;
+        position: relative;
+        height: 101px;
+        width: 68px;
+        right: 80px;
+        filter: blur(2px);
+
+        -webkit-animation: poster-back-right 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.5s both;
+        animation: poster-back-right 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.5s both;
+    }
+}

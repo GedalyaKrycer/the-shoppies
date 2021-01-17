@@ -3,15 +3,18 @@
 @import '../../../sassStyles/mixins';
 
 .winnerContainer {
+    width: 90%;
     max-width: 830px;
     margin: 0 auto;
+    
 }
 
-.winnerCrown {
-    margin: 0 auto;
+.winner__crown {
+    margin: 60px auto 30px;
     width: 90px;
     height: 60px;
     position: relative;
+    transform: scale(0.7);
 
     &__spoke1 {
         background-color: $primaryColor;
@@ -20,8 +23,8 @@
         width: 20px;
         opacity: 0;
 
-        -webkit-animation: crown-bottom-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
-        animation: crown-bottom-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        -webkit-animation: crown-bottom-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+        animation: crown-bottom-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
     }
 
     &__spoke2 {
@@ -32,8 +35,8 @@
         transform-origin: bottom left;
         opacity: 0;
 
-        -webkit-animation: crown-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
-        animation: crown-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        -webkit-animation: crown-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+        animation: crown-left 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
     }
 
     &__spoke3 {
@@ -44,8 +47,8 @@
         transform-origin: bottom center;
         opacity: 0;
 
-        -webkit-animation: crown-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
-        animation: crown-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        -webkit-animation: crown-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+        animation: crown-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
     }
 
     &__spoke4 {
@@ -56,8 +59,8 @@
         opacity: 0;
         transform-origin: bottom right;
 
-        -webkit-animation: crown-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
-        animation: crown-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        -webkit-animation: crown-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+        animation: crown-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
     }
 
     &__spoke5 {
@@ -68,7 +71,39 @@
         transform-origin: bottom left;
         opacity: 0;
 
-        -webkit-animation: crown-bottom-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
-        animation: crown-bottom-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s both;
+        -webkit-animation: crown-bottom-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
+        animation: crown-bottom-right 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 1.3s both;
     }
+}
+
+
+.winner__content-container {
+    padding-top: 90px;
+    border-top: #085948 4px solid;
+    border-bottom: #085948 4px solid;
+    position: relative;
+    z-index: 1;
+    bottom: 80px;
+}
+
+.winner__content {
+    margin-top: 10px;
+    padding: 20px;
+    color: $primaryLight1Color;
+    text-align: center;
+
+
+
+    button {
+        margin-top: 40px;
+    }
+}
+
+.winner__shopify {
+  position: relative;
+  top: 72px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+
 }

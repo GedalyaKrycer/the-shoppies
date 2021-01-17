@@ -17,16 +17,14 @@
     background-color: $primaryDark1Color;
     width: 90%;
     height: 90%;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+   
 
     -webkit-animation: winner-box-shadow-fade 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
         animation: winner-box-shadow-fade 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
 
-        // @include customMinBreakPoint(1024) {
-    //     grid-template-columns: 60% 1fr;
-    //     padding-left: 5%;
-    // }
+
 }

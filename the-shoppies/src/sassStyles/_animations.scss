@@ -419,8 +419,8 @@
               transform: scale3d(0.75, 1.25, 1);
     }
     50% {
-      -webkit-transform: scale3d(1.15, 0.85, 1);
-              transform: scale3d(1.15, 0.85, 1);
+      -webkit-transform: scale3d(1.155, 0.85, 1);
+              transform: scale3d(1.155, 0.85, 1);
     }
     65% {
       -webkit-transform: scale3d(0.95, 1.05, 1);
@@ -449,8 +449,8 @@
               transform: scale3d(0.75, 1.25, 1);
     }
     50% {
-      -webkit-transform: scale3d(1.15, 0.85, 1);
-              transform: scale3d(1.15, 0.85, 1);
+      -webkit-transform: scale3d(1.155, 0.85, 1);
+              transform: scale3d(1.155, 0.85, 1);
     }
     65% {
       -webkit-transform: scale3d(0.95, 1.05, 1);
@@ -500,6 +500,7 @@
         left: 39px;
         right: 0;
         top: 44px;
+        -webkit-transform: rotate(-115deg);
         transform: rotate(-115deg);
       opacity: 0;
     }
@@ -507,6 +508,7 @@
         left: 29px;
         right: 0;
         top: 44px;
+        -webkit-transform: rotate(-135deg);
         transform: rotate(-135deg);
         opacity: 1;
     }
@@ -516,6 +518,7 @@
       left: 39px;
       right: 0;
       top: 44px;
+      -webkit-transform: rotate(-115deg);
       transform: rotate(-115deg);
       opacity: 0;
     }
@@ -536,6 +539,7 @@
         top: 32px;
         left: 50%;
         right: 50%;
+        -webkit-transform: translate(-54%, -50%) rotate(90deg);
         transform: translate(-54%, -50%) rotate(90deg);
         opacity: 0;
     }
@@ -543,6 +547,7 @@
         top: 22px;
         left: 50%;
         right: 50%;
+        -webkit-transform: translate(-54%, -50%) rotate(90deg);
         transform: translate(-54%, -50%) rotate(90deg);
         opacity: 1;
     }
@@ -552,6 +557,7 @@
         top: 32px;
         left: 50%;
         right: 50%;
+        -webkit-transform: translate(-54%, -50%) rotate(90deg);
         transform: translate(-54%, -50%) rotate(90deg);
         opacity: 0;
     }
@@ -559,6 +565,7 @@
         top: 22px;
         left: 50%;
         right: 50%;
+        -webkit-transform: translate(-54%, -50%) rotate(90deg);
         transform: translate(-54%, -50%) rotate(90deg);
         opacity: 1;
     }
@@ -573,6 +580,7 @@
         left: 19px;
         right: 0;
         top: 45px;
+        -webkit-transform: rotate(115deg);
         transform: rotate(115deg);
         opacity: 0;
     }
@@ -580,6 +588,7 @@
         left: 29px;
         right: 0;
         top: 45px;
+        -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         opacity: 1;
     }
@@ -589,6 +598,7 @@
         left: 19px;
         right: 0;
         top: 45px;
+        -webkit-transform: rotate(115deg);
         transform: rotate(115deg);
         opacity: 0;
     }
@@ -596,6 +606,7 @@
         left: 29px;
         right: 0;
         top: 45px;
+        -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         opacity: 1;
     }
@@ -650,3 +661,132 @@
     }
   }
   
+
+
+  // Scale Up Entrance Animation
+  @-webkit-keyframes scale-up {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    80% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+  @keyframes scale-up {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    80% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+
+
+
+  // Poster Left Entrance Animation
+  @-webkit-keyframes poster-left {
+    0% {
+        left: 100px;
+        opacity: 0;
+    }
+    100% {
+        left: 40px;
+        opacity: 1;
+    }
+  }
+  @keyframes poster-left {
+    0% {
+        left: 100px;
+        opacity: 0;
+    }
+    100% {
+        left: 40px;
+        opacity: 1;
+    }
+  }
+
+
+  // Poster Back Left Entrance Animation
+  @-webkit-keyframes poster-back-left {
+    0% {
+        left: 100px;
+        opacity: 0;
+    }
+    100% {
+        left: 80px;
+        opacity: 1;
+    }
+  }
+  @keyframes poster-back-left {
+    0% {
+        left: 100px;
+        opacity: 0;
+    }
+    100% {
+        left: 80px;
+        opacity: 1;
+    }
+  }
+
+  
+  // Poster Right Entrance Animation
+  @-webkit-keyframes poster-right {
+    0% {
+        right: 100px;
+        opacity: 0;
+    }
+    100% {
+        right: 40px;
+        opacity: 1;
+    }
+  }
+  @keyframes poster-right {
+    0% {
+        right: 100px;
+        opacity: 0;
+    }
+    100% {
+        right: 40px;
+        opacity: 1;
+    }
+  }
+
+
+
+  // Poster Back Right Entrance Animation
+  @-webkit-keyframes poster-back-right {
+    0% {
+        right: 100px;
+        opacity: 0;
+    }
+    100% {
+        right: 80px;
+        opacity: 1;
+    }
+  }
+  @keyframes poster-back-right {
+    0% {
+        right: 100px;
+        opacity: 0;
+    }
+    100% {
+        right: 80px;
+        opacity: 1;
+    }
+  }
