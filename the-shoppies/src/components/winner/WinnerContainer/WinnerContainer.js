@@ -20,16 +20,14 @@ const WinnerContainer = () => {
     const history = useHistory();
 
 
-    // useEffect(() => {
-    //     if (!auth) {
-    //         history.push("/");
-    //     }
-    // }, [])
+    useEffect(() => {
+        if (!auth) {
+            history.push("/");
+        }
+    }, [auth])
 
     const handleRevealWinner = () => {
-        console.log("Reveal Winner Clicked")
         setWinnerAuth(action.setWinnerAuth(false));
-        history.push("/");
     }
 
 
