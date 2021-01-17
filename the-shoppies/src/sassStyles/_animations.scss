@@ -341,7 +341,8 @@
         overflow: hidden;
     }
     100% {
-      overflow: auto;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
     }
   }
   @keyframes turn-on-overflow {
@@ -349,7 +350,8 @@
         overflow: hidden;
     }
     100% {
-      overflow: auto;
+        overflow: auto;
+        // -webkit-overflow-scrolling: touch;
     }
   }
 

@@ -35,10 +35,10 @@ const WinnerContainer = () => {
 
 
     const handleReset = () => {
+        setWinnerAuth(action.setWinnerAuth(false));
         localStorage.removeItem("winnerList");
         localStorage.removeItem("nominationList");
         clearNominations(action.clearAllNominations())
-        setWinnerAuth(action.setWinnerAuth(false));
     }
 
 
