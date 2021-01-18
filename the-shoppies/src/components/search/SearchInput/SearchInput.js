@@ -37,6 +37,7 @@ const SearchInput = (props) => {
                     onChange={(event) => props.handleSearch(event)}
                     onFocus={handleFocus}
                     value={props.searchValue}
+                    disabled={props.disable}
                 />
 
                 <span style={{ opacity: props.searchFilled ? 0 : 1 }}>
@@ -53,6 +54,7 @@ const SearchInput = (props) => {
                     onClick={handleOptionsMenu}
                     className="search__option-btn"
                     aria-label="Search options menu toggle"
+                    disabled={props.disable}
                 >
                     <svg
                         viewBox="0 0 5 16"

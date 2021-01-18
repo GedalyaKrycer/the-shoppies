@@ -83,6 +83,10 @@
         fill: $primaryDark1Color;
     }
 
+    &:disabled ~ .search__magnify-icon {
+        fill: $textLight1Color;
+    }
+
 
 }
 
@@ -111,6 +115,14 @@
     &:hover > svg,
     &:focus > svg {
         fill: $primaryColor;
+    }
+
+    &:disabled {
+        background: none;
+    }
+    
+    &:disabled > svg {
+        fill: $textLight1Color;
     }
     
 
@@ -181,4 +193,5 @@
         border: 1px solid $primaryColor;
         outline: 0;
     }
+
 }

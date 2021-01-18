@@ -120,6 +120,7 @@ const MovieSearchContainer = () => {
                 searchValue={searchTerm}
                 handleSeriesToggle={setSearchSeries}
                 seriesToggle={searchSeries}
+                disable={nominationsCompleted}
             />
 
             {searchTerm
