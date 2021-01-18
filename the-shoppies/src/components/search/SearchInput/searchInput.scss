@@ -119,6 +119,7 @@
 
     &:disabled {
         background: none;
+        cursor: default;
     }
     
     &:disabled > svg {
