@@ -73,7 +73,7 @@ const MovieSearchContainer = () => {
         setTriggerExitResults(true);
 
         // Resets search and results array
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setSearchFilled(false);
             clearResults(action.clearResults())
             setSearchTerm('');
@@ -81,6 +81,10 @@ const MovieSearchContainer = () => {
 
         // Sends nominated movie to new API call
         queryOmdbNomination(action.queryOmdbNomination(movieTitle, movieYear));
+
+        return () => {
+            clearTimeout(timer);
+        }
     }
 
     // Search Results Display
